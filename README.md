@@ -1,3 +1,0 @@
-# Ourchitecture
-
-The pages website.
