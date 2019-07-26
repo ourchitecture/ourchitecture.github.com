@@ -522,16 +522,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _pwa_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pwa-service.service */ "./src/app/pwa-service.service.ts");
+
 
 
 
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(platform, splashScreen, statusBar) {
+    function AppComponent(platform, splashScreen, statusBar, pwa, toaster) {
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
+        this.pwa = pwa;
+        this.toaster = toaster;
         this.initializeApp();
     }
     AppComponent.prototype.initializeApp = function () {
@@ -539,6 +543,31 @@ var AppComponent = /** @class */ (function () {
         this.platform.ready().then(function () {
             _this.statusBar.styleDefault();
             _this.splashScreen.hide();
+            if (_this.pwa.promptEvent) {
+                _this.toaster.create({
+                    header: 'Ourchitecture Application',
+                    message: 'Install this application?',
+                    position: 'top',
+                    showCloseButton: true,
+                    translucent: true,
+                    buttons: [
+                        {
+                            side: 'start',
+                            icon: 'star',
+                            text: 'Yes',
+                            handler: function () {
+                                _this.pwa.promptEvent.prompt();
+                            }
+                        }, {
+                            text: 'No',
+                            role: 'cancel',
+                            handler: function () { }
+                        }
+                    ],
+                }).then(function (toast) {
+                    toast.present();
+                });
+            }
         });
     };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -548,7 +577,9 @@ var AppComponent = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"],
-            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"]])
+            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"],
+            _pwa_service_service__WEBPACK_IMPORTED_MODULE_5__["PwaService"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -571,15 +602,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _covalent_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @covalent/core */ "./node_modules/@covalent/core/fesm5/covalent-core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm5/service-worker.js");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm5/service-worker.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _covalent_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @covalent/core */ "./node_modules/@covalent/core/fesm5/covalent-core.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 
 
@@ -601,29 +632,75 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"],
             ],
             entryComponents: [],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
-                _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"].forRoot(),
-                _angular_material__WEBPACK_IMPORTED_MODULE_8__["MatCommonModule"],
-                _covalent_core__WEBPACK_IMPORTED_MODULE_9__["CovalentCommonModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_11__["AppRoutingModule"],
-                _angular_service_worker__WEBPACK_IMPORTED_MODULE_12__["ServiceWorkerModule"].register('ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_13__["environment"].production }),
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(),
+                _angular_material__WEBPACK_IMPORTED_MODULE_9__["MatCommonModule"],
+                _covalent_core__WEBPACK_IMPORTED_MODULE_10__["CovalentCommonModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"],
+                _angular_service_worker__WEBPACK_IMPORTED_MODULE_4__["ServiceWorkerModule"].register('./ngsw-worker.js', { enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_13__["environment"].production }),
             ],
             providers: [
-                _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__["StatusBar"],
-                _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__["SplashScreen"]
+                _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__["StatusBar"],
+                _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__["SplashScreen"]
             ],
             bootstrap: [
-                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]
             ]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pwa-service.service.ts":
+/*!****************************************!*\
+  !*** ./src/app/pwa-service.service.ts ***!
+  \****************************************/
+/*! exports provided: PwaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PwaService", function() { return PwaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm5/service-worker.js");
+
+
+
+var PwaService = /** @class */ (function () {
+    function PwaService(swUpdate) {
+        var _this = this;
+        this.swUpdate = swUpdate;
+        swUpdate.available.subscribe(function (event) {
+            if (_this.askUserToUpdate()) {
+                window.location.reload();
+            }
+        });
+        window.addEventListener('beforeinstallprompt', function (event) {
+            event.preventDefault();
+            _this.promptEvent = event;
+        });
+    }
+    PwaService.prototype.askUserToUpdate = function () {
+        return true;
+    };
+    PwaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_service_worker__WEBPACK_IMPORTED_MODULE_2__["SwUpdate"]])
+    ], PwaService);
+    return PwaService;
 }());
 
 
