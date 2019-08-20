@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1565885180923,
+  "timestamp": 1566326692573,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -9,7 +9,7 @@
       "updateMode": "prefetch",
       "urls": [
         "/100.34129a8d4d76052e5441.js",
-        "/14.a41ae5508c94a414c692.js",
+        "/14.af9a10c9eaf910dea77d.js",
         "/15.aba42ff3e9d0d9839b9c.js",
         "/16.3298e4941c9198370f50.js",
         "/17.d7be0610889c237ab87b.js",
@@ -109,7 +109,7 @@
         "/index.html",
         "/main.35a9b4d7f8652e672060.js",
         "/polyfills.2a700ed931a39030654e.js",
-        "/runtime.70e2b051f899d3d22d57.js",
+        "/runtime.7102ba79dae3586bef30.js",
         "/styles.37c4a801d5c61592e168.css"
       ],
       "patterns": []
@@ -123,6 +123,7 @@
         "/assets/figures/enterprise-traditional-lean.png",
         "/assets/figures/people-process-technology.drawio",
         "/assets/figures/people-process-technology.png",
+        "/assets/figures/topology.drawio",
         "/assets/icon/apple-touch-icon.png",
         "/assets/icon/favicon.ico",
         "/assets/icon/favicon.png",
@@ -141,7 +142,7 @@
   "dataGroups": [],
   "hashTable": {
     "/100.34129a8d4d76052e5441.js": "316ad87393c8567480b504fbb9af53fcc5d5ab4a",
-    "/14.a41ae5508c94a414c692.js": "46e55c1af61ecf71e74e699893d1ed6a00a5ccfb",
+    "/14.af9a10c9eaf910dea77d.js": "6f44996deeb2080a306fc4df7959eff6323c8bdd",
     "/15.aba42ff3e9d0d9839b9c.js": "65f543588a5c7d7037da739b6d4a2a62c59d84c1",
     "/16.3298e4941c9198370f50.js": "45f32b4909c97599ab39f1c0ed9a7fe041e545aa",
     "/17.d7be0610889c237ab87b.js": "454eaa273605a1ab6133cee917804cfe83cefe48",
@@ -239,6 +240,7 @@
     "/assets/figures/enterprise-traditional-lean.png": "ee43bd7f8a235bfbd560da943bfafef87b2bb5ba",
     "/assets/figures/people-process-technology.drawio": "f24deea481eab0023320b08d51d85b8cc9d55e78",
     "/assets/figures/people-process-technology.png": "a059eda94cd22fc5b8dcfe8f79652a5fbe0b450d",
+    "/assets/figures/topology.drawio": "ff8fc23bba72401fe9eae72ca02815e3c7aade3c",
     "/assets/icon/apple-touch-icon.png": "df138453f466ccb1bfc6d34a466d3e3392565709",
     "/assets/icon/favicon.ico": "366bcf7023691aad8e997b41d49c4e651985414c",
     "/assets/icon/favicon.png": "0688dd3e81f7717612996a9bbd148ea97c9cfa38",
@@ -253,10 +255,10 @@
     "/common.2ead35ef37728b7fdc4b.js": "eba1701738c76edbaaeb124f0e719c813a6642c2",
     "/es2015-polyfills.98176319a50c5c835fec.js": "373a2379e2225c70d07ae5a7a676739336dde371",
     "/favicon.ico": "366bcf7023691aad8e997b41d49c4e651985414c",
-    "/index.html": "324318fe0e5fd6889918493585b95c2d2cb89d79",
+    "/index.html": "0106966fc3e6057ae2b6dfaf5101b5f4f71baf54",
     "/main.35a9b4d7f8652e672060.js": "038447128fa147d56b344b28913fcad0002845d4",
     "/polyfills.2a700ed931a39030654e.js": "d15c8b45520df14ea9b2f05c7fffc36476b8a104",
-    "/runtime.70e2b051f899d3d22d57.js": "e7ebc409592acb1c27b612fd63b91d1ad0a5c544",
+    "/runtime.7102ba79dae3586bef30.js": "0b0fc9ba9a9708932b131cae9a491d462c67bb71",
     "/styles.37c4a801d5c61592e168.css": "b7f57515fa2daa74810cd78805e9ac6c7b058fa0"
   },
   "navigationUrls": [
