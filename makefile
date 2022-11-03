@@ -1,21 +1,26 @@
+site_path=./src/ionic-ng/
+
 .DEFAULT_GOAL:=all
 
 .PHONY: all
 all:
-	@cd ./src/ionic-ng/ && "$(MAKE)" $@
+	@cd $(site_path) && "$(MAKE)" $@
 
 .PHONY: init
 init:
-	@cd ./src/ionic-ng/ && "$(MAKE)" $@
+	@cd $(site_path) && "$(MAKE)" $@
 
 .PHONY: install
 install:
-	@cd ./src/ionic-ng/ && "$(MAKE)" $@
+	@rm -rf ./docs/ \
+	&& cd $(site_path) \
+	&& "$(MAKE)" init $@ \
+	&& cp -r ./www/ ../../docs/
 
 .PHONY: check
 check:
-	@cd ./src/ionic-ng/ && "$(MAKE)" $@
+	@cd $(site_path) && "$(MAKE)" init $@
 
 .PHONY: start
 start:
-	@cd ./src/ionic-ng/ && "$(MAKE)" $@
+	@cd $(site_path) && "$(MAKE)" init $@
