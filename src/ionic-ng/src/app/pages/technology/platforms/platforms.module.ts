@@ -6,6 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PlatformsPageRoutingModule } from './platforms-routing.module';
 
+import { FooterComponentModule } from '../../../components/page/footer/footer.module';
+
 import { PlatformsPage } from './platforms.page';
 
 @NgModule({
@@ -13,7 +15,8 @@ import { PlatformsPage } from './platforms.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    PlatformsPageRoutingModule
+    PlatformsPageRoutingModule,
+    FooterComponentModule,
   ],
   declarations: [PlatformsPage]
 })
