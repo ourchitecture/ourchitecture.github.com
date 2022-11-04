@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'capabilities',
     loadChildren: () => import('./capabilities/capabilities.module').then( m => m.CapabilitiesPageModule)
+  },
+  {
+    path: 'platforms',
+    loadChildren: () => import('./platforms/platforms.module').then( m => m.PlatformsPageModule)
   }
 ];
 
