@@ -17,6 +17,102 @@
   <div>
     <ion-card>
       <ion-card-header>
+        <ion-card-title>Organizational Foundations</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <h2>Mission, Vision and Values</h2>
+              <p>
+                The traditional trio of elements that describe an organization's purpose, the
+                ideal future state that the organization hopes to achieve, and the core principles
+                that guide and direct the organization.
+              </p>
+              <ion-list lines="full">
+                <ion-item (click)="openVideo('365 Careers: The Mission, Vision, and Values statements', 'https://www.youtube.com/embed/8wem6FZAucw')" button>
+                  <ion-icon name="videocam-outline" slot="start"></ion-icon>
+                  <ion-thumbnail slot="start">
+                    <img alt="365 Careers: The Mission, Vision, and Values statements" src="/assets/thumbnails/videos/youtube.com/365-careers_the-mission-vision-and-values-statements.jpg" />
+                  </ion-thumbnail>
+                  <ion-label>365 Careers: The Mission, Vision, and Values statements</ion-label>
+                </ion-item>
+                <ion-item (click)="openLeavingSite('https://www.shrm.org/resourcesandtools/tools-and-samples/hr-qa/pages/isthereadifferencebetweenacompany%E2%80%99smission,visionandvaluestatements.aspx')" button detail>
+                  <ion-icon name="link-outline" slot="start"></ion-icon>
+                  <ion-label>Resources from the Society for Human Resource Management</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <h2>Why?</h2>
+              <p>
+                Expanding on the traditional "Mission" statement, Simon Sinek's book series and lectures
+                on "Start with why" encouraged organizations to more effectively communicate the
+                organization's purpose and to let the "Why" inform "How" the organization works to fulfill
+                its purpose and the "What".
+              </p>
+              <ion-list lines="full">
+                <ion-item (click)="openVideo('Simon Sinek: Find your why', 'https://www.youtube.com/embed/tF7YLGpOoz8')" button>
+                  <ion-icon name="videocam-outline" slot="start"></ion-icon>
+                  <ion-thumbnail slot="start">
+                    <img alt="Simon Sinek: Find your why" src="/assets/thumbnails/videos/youtube.com/simon-sinek_find-your-why.jpg" />
+                  </ion-thumbnail>
+                  <ion-label>Simon Sinek: Find your why video</ion-label>
+                </ion-item>
+                <ion-item (click)="openLeavingSite('https://www.amazon.com/dp/B07VVJF819?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667593525&sr=8-1')" button detail>
+                  <ion-icon name="book-outline" slot="start"></ion-icon>
+                  <ion-thumbnail slot="start">
+                    <img alt="Simon Sinek: Find your why" src="/assets/thumbnails/books/simon-sinek_find-your-why.jpg" />
+                  </ion-thumbnail>
+                  <ion-label>Simon Sinek: Find your why book</ion-label>
+                </ion-item>
+                <ion-item (click)="openLeavingSite('https://www.amazon.com/dp/B07VVJF819?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667593525&sr=8-1')" button detail>
+                  <ion-icon name="book-outline" slot="start"></ion-icon>
+                  <ion-thumbnail slot="start">
+                    <img alt="Simon Sinek: Start with why" src="/assets/thumbnails/books/simon-sinek_start-with-why.jpg" />
+                  </ion-thumbnail>
+                  <ion-label>Simon Sinek: Start with why book</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <h2>Business Model Canvas</h2>
+              <p>
+                The Strategyzer organization drastically simplified the overall topology of
+                capturing and communicating an organization's business model with the
+                "Business Model Canvas".
+              </p>
+              <ion-list lines="full">
+                <ion-item (click)="openVideo('Simon Sinek: Find your why', 'https://www.youtube.com/embed/QoAOzMTLP5s')" button>
+                  <ion-icon name="videocam-outline" slot="start"></ion-icon>
+                  <ion-thumbnail slot="start">
+                    <img alt="Strategyzer: Business Model Canvas explained" src="/assets/thumbnails/videos/youtube.com/strategyzer_business-model-canvas-explained.jpg" />
+                  </ion-thumbnail>
+                  <ion-label>Strategyzer: Business Model Canvas explained</ion-label>
+                </ion-item>
+                <ion-item (click)="openLeavingSite('https://www.amazon.com/dp/B08PCQ8TVX?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667598501&sr=8-3')" button detail>
+                  <ion-icon name="book-outline" slot="start"></ion-icon>
+                  <ion-thumbnail slot="start">
+                    <img alt="Strategyzer: Business Model Generation" src="/assets/thumbnails/books/strategyzer_business-model-generation.jpg" />
+                  </ion-thumbnail>
+                  <ion-label>Strategyzer: Business Model Generation</ion-label>
+                </ion-item>
+                <ion-item (click)="openLeavingSite('https://www.strategyzer.com/canvas/business-model-canvas')" button detail>
+                  <ion-icon name="link-outline" slot="start"></ion-icon>
+                  <ion-label>Strategyzer's official website for "The Business Model Canvas"</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
         <ion-card-title>The Four Organizational Elements</ion-card-title>
       </ion-card-header>
       <ion-card-content>
@@ -57,6 +153,43 @@
       </ion-card-content>
     </ion-card>
   </div>
+  <ion-modal #videoModal [isOpen]="selectedVideo != null" (didDismiss)="closeVideo()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Watch a Video</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="videoModal.dismiss()">Cancel</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <iframe width="100%" height="80%" [src]="selectedVideo.url" [title]="selectedVideo.title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-modal #leavingSiteModal [isOpen]="leavingSite != null" (didDismiss)="closeLeavingSite()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="leavingSiteModal.dismiss()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Leaving this website?</ion-title>
+          <ion-buttons slot="end">
+            <ion-button [href]="leavingSite.url" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          You are about to leave this website.
+          Please confirm. You will be directed to:
+        </p>
+        <ion-note><a [href]="leavingSite.url">{{leavingSite.url}}</a></ion-note>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
 
 <app-footer></app-footer>
