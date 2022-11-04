@@ -6,7 +6,7 @@ all: init install check
 .PHONY: init
 init:
 	@export CI=1 \
-	&& yarn install
+  && yarn install --frozen-lockfile --immutable
 
 .PHONY: install
 install:
