@@ -4,6 +4,12 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Ourchitecture</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleDarkMode()">
+        <ion-icon name="contrast-outline" slot="start"></ion-icon>
+        Toggle Dark Mode
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -158,7 +164,7 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>Watch a Video</ion-title>
-          <ion-buttons slot="end">
+          <ion-buttons slot="primary">
             <ion-button (click)="videoModal.dismiss()">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
@@ -172,11 +178,11 @@
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-buttons slot="start">
+          <ion-buttons slot="secondary">
             <ion-button (click)="leavingSiteModal.dismiss()">Cancel</ion-button>
           </ion-buttons>
           <ion-title>Leaving this website?</ion-title>
-          <ion-buttons slot="end">
+          <ion-buttons slot="primary">
             <ion-button [href]="leavingSite.url" [strong]="true">Confirm</ion-button>
           </ion-buttons>
         </ion-toolbar>
