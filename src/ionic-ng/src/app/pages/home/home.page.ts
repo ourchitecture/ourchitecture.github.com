@@ -2,7 +2,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import { Component } from '@angular/core';
 
+import { ModalController } from '@ionic/angular';
+
 import { Storage } from '@ionic/storage-angular';
+
+import { LeavingSiteComponent } from '../../components/modals/leaving-site/leaving-site.component';
 
 const STORAGE_KEYS_APP_DARK_MODE = 'app_dark-mode';
 
@@ -16,9 +20,11 @@ export class HomePage {
   wasDarkModeToggleEnabled = true;
   isDarkModeToggleEnabled = true;
   selectedVideo = null;
-  leavingSite = null;
+  leavingSiteIsVisible = false;
+  leavingSiteUrl = null;
 
   constructor(
+    private modalController: ModalController,
     private sanitizer: DomSanitizer,
     private storage: Storage) {
   }
@@ -91,16 +97,16 @@ export class HomePage {
     this.selectedVideo = null;
   }
 
-  openLeavingSite(url: string) {
-    this.leavingSite = {
-      url,
-    };
+  async openLeavingSite(url: string) {
 
-    console.log('open leaving site', this.leavingSite);
-  }
+    const leavingSiteModal = await this.modalController.create({
+      component: LeavingSiteComponent,
+      componentProps: {
+        url: url,
+        modalController: this.modalController,
+      },
+    });
 
-  closeLeavingSite() {
-    console.log('close leaving site');
-    this.leavingSite = null;
+    await leavingSiteModal.present();
   }
 }

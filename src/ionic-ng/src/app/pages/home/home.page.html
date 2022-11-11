@@ -159,7 +159,7 @@
       </ion-card-content>
     </ion-card>
   </div>
-  <ion-modal #videoModal [isOpen]="selectedVideo != null" (didDismiss)="closeVideo()">
+  <!-- <ion-modal #videoModal [isOpen]="selectedVideo != null" (didDismiss)="closeVideo()">
     <ng-template>
       <ion-header>
         <ion-toolbar>
@@ -173,29 +173,7 @@
         <iframe width="100%" height="80%" [src]="selectedVideo.url" [title]="selectedVideo.title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </ion-content>
     </ng-template>
-  </ion-modal>
-  <ion-modal #leavingSiteModal [isOpen]="leavingSite != null" (didDismiss)="closeLeavingSite()">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="secondary">
-            <ion-button (click)="leavingSiteModal.dismiss()">Cancel</ion-button>
-          </ion-buttons>
-          <ion-title>Leaving this website?</ion-title>
-          <ion-buttons slot="primary">
-            <ion-button [href]="leavingSite.url" [strong]="true">Confirm</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <p>
-          You are about to leave this website.
-          Please confirm. You will be directed to:
-        </p>
-        <ion-note><a [href]="leavingSite.url">{{leavingSite.url}}</a></ion-note>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
+  </ion-modal> -->
 </ion-content>
 
 <app-footer></app-footer>

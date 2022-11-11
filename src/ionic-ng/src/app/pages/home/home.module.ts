@@ -8,6 +8,8 @@ import { FooterComponentModule } from '../../components/page/footer/footer.modul
 
 import { HomePageRoutingModule } from './home-routing.module';
 
+import { LeavingSiteComponentModule } from '../../components/modals/leaving-site/leaving-site.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule,
     FooterComponentModule,
+    LeavingSiteComponentModule,
   ],
   declarations: [HomePage]
 })
