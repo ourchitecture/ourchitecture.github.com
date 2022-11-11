@@ -24,3 +24,10 @@ check:
 .PHONY: start
 start:
 	@yarn start
+
+.PHONY: component
+component:
+	ifndef path
+		$(error Missing required argument "path")
+	endif
+	@yarn ionic generate component components/$(path) --create-module
