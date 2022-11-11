@@ -8,7 +8,9 @@ import { FooterComponentModule } from '../../components/page/footer/footer.modul
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-import { LeavingSiteComponentModule } from '../../components/modals/leaving-site/leaving-site.module';
+import { BookItemComponentModule } from '../../components/list/book-item/book-item.module';
+import { UrlItemComponentModule } from '../../components/list/url-item/url-item.module';
+import { VideoItemComponentModule } from '../../components/list/video-item/video-item.module';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { LeavingSiteComponentModule } from '../../components/modals/leaving-site
     IonicModule,
     HomePageRoutingModule,
     FooterComponentModule,
-    LeavingSiteComponentModule,
+    BookItemComponentModule,
+    UrlItemComponentModule,
+    VideoItemComponentModule,
   ],
   declarations: [HomePage]
 })

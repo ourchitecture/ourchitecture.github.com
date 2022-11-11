@@ -36,17 +36,17 @@
                 that guide and direct the organization.
               </p>
               <ion-list lines="full">
-                <ion-item (click)="openVideo('365 Careers: The Mission, Vision, and Values statements', 'https://www.youtube.com/embed/8wem6FZAucw')" button>
-                  <ion-icon name="videocam-outline" slot="start"></ion-icon>
-                  <ion-thumbnail slot="start">
-                    <img alt="365 Careers: The Mission, Vision, and Values statements" src="/assets/thumbnails/videos/youtube.com/365-careers_the-mission-vision-and-values-statements.jpg" />
-                  </ion-thumbnail>
-                  <ion-label>365 Careers: The Mission, Vision, and Values statements</ion-label>
-                </ion-item>
-                <ion-item (click)="openLeavingSite('https://www.shrm.org/resourcesandtools/tools-and-samples/hr-qa/pages/isthereadifferencebetweenacompany%E2%80%99smission,visionandvaluestatements.aspx')" button detail>
-                  <ion-icon name="link-outline" slot="start"></ion-icon>
-                  <ion-label>Resources from the Society for Human Resource Management</ion-label>
-                </ion-item>
+                <app-video-item
+                  (visit)="openVideo($event)"
+                  title="365 Careers: The Mission, Vision, and Values statements"
+                  thumbnailImageFilePath="youtube.com/365-careers_the-mission-vision-and-values-statements.jpg"
+                  url="https://www.youtube.com/embed/8wem6FZAucw">
+                </app-video-item>
+                <app-url-item
+                  (visit)="openLeavingSite($event)"
+                  title="Resources from the Society for Human Resource Management"
+                  url="https://www.shrm.org/resourcesandtools/tools-and-samples/hr-qa/pages/isthereadifferencebetweenacompany%E2%80%99smission,visionandvaluestatements.aspx">
+                </app-url-item>
               </ion-list>
             </ion-label>
           </ion-item>
@@ -60,27 +60,24 @@
                 its purpose and the "What".
               </p>
               <ion-list lines="full">
-                <ion-item (click)="openVideo('Simon Sinek: Find your why', 'https://www.youtube.com/embed/tF7YLGpOoz8')" button>
-                  <ion-icon name="videocam-outline" slot="start"></ion-icon>
-                  <ion-thumbnail slot="start">
-                    <img alt="Simon Sinek: Find your why" src="/assets/thumbnails/videos/youtube.com/simon-sinek_find-your-why.jpg" />
-                  </ion-thumbnail>
-                  <ion-label>Simon Sinek: Find your why video</ion-label>
-                </ion-item>
-                <ion-item (click)="openLeavingSite('https://www.amazon.com/dp/B07VVJF819?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667593525&sr=8-1')" button detail>
-                  <ion-icon name="book-outline" slot="start"></ion-icon>
-                  <ion-thumbnail slot="start">
-                    <img alt="Simon Sinek: Find your why" src="/assets/thumbnails/books/simon-sinek_find-your-why.jpg" />
-                  </ion-thumbnail>
-                  <ion-label>Simon Sinek: Find your why book</ion-label>
-                </ion-item>
-                <ion-item (click)="openLeavingSite('https://www.amazon.com/dp/B07VVJF819?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667593525&sr=8-1')" button detail>
-                  <ion-icon name="book-outline" slot="start"></ion-icon>
-                  <ion-thumbnail slot="start">
-                    <img alt="Simon Sinek: Start with why" src="/assets/thumbnails/books/simon-sinek_start-with-why.jpg" />
-                  </ion-thumbnail>
-                  <ion-label>Simon Sinek: Start with why book</ion-label>
-                </ion-item>
+                <app-video-item
+                  (visit)="openVideo($event)"
+                  title="Simon Sinek: Find your why"
+                  thumbnailImageFilePath="youtube.com/simon-sinek_find-your-why.jpg"
+                  url="https://www.youtube.com/embed/tF7YLGpOoz8">
+                </app-video-item>
+                <app-book-item
+                  (visit)="openLeavingSite($event)"
+                  title="Simon Sinek: Find your why"
+                  thumbnailImageFileName="simon-sinek_find-your-why.jpg"
+                  url="https://www.amazon.com/dp/B07VVJF819?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667593525&sr=8-1">
+                </app-book-item>
+                <app-book-item
+                  (visit)="openLeavingSite($event)"
+                  title="Simon Sinek: Start with why"
+                  thumbnailImageFileName="simon-sinek_start-with-why.jpg"
+                  url="https://www.amazon.com/dp/B07VVJF819?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667593525&sr=8-1">
+                </app-book-item>
               </ion-list>
             </ion-label>
           </ion-item>
@@ -93,24 +90,23 @@
                 "Business Model Canvas".
               </p>
               <ion-list lines="full">
-                <ion-item (click)="openVideo('Simon Sinek: Find your why', 'https://www.youtube.com/embed/QoAOzMTLP5s')" button>
-                  <ion-icon name="videocam-outline" slot="start"></ion-icon>
-                  <ion-thumbnail slot="start">
-                    <img alt="Strategyzer: Business Model Canvas explained" src="/assets/thumbnails/videos/youtube.com/strategyzer_business-model-canvas-explained.jpg" />
-                  </ion-thumbnail>
-                  <ion-label>Strategyzer: Business Model Canvas explained</ion-label>
-                </ion-item>
-                <ion-item (click)="openLeavingSite('https://www.amazon.com/dp/B08PCQ8TVX?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667598501&sr=8-3')" button detail>
-                  <ion-icon name="book-outline" slot="start"></ion-icon>
-                  <ion-thumbnail slot="start">
-                    <img alt="Strategyzer: Business Model Generation" src="/assets/thumbnails/books/strategyzer_business-model-generation.jpg" />
-                  </ion-thumbnail>
-                  <ion-label>Strategyzer: Business Model Generation</ion-label>
-                </ion-item>
-                <ion-item (click)="openLeavingSite('https://www.strategyzer.com/canvas/business-model-canvas')" button detail>
-                  <ion-icon name="link-outline" slot="start"></ion-icon>
-                  <ion-label>Strategyzer's official website for "The Business Model Canvas"</ion-label>
-                </ion-item>
+                <app-video-item
+                  (visit)="openVideo($event)"
+                  title="Strategyzer: Business Model Canvas explained"
+                  thumbnailImageFilePath="youtube.com/strategyzer_business-model-canvas-explained.jpg"
+                  url="https://www.youtube.com/embed/QoAOzMTLP5s">
+                </app-video-item>
+                <app-book-item
+                  (visit)="openLeavingSite($event)"
+                  title="Strategyzer: Business Model Generation"
+                  thumbnailImageFileName="strategyzer_business-model-generation.jpg"
+                  url="https://www.amazon.com/dp/B08PCQ8TVX?binding=kindle_edition&searchxofy=true&ref_=dbs_s_aps_series_rwt_tkin&qid=1667598501&sr=8-3">
+                </app-book-item>
+                <app-url-item
+                  (visit)="openLeavingSite($event)"
+                  title="Strategyzer's official website for &quot;The Business Model Canvas&quot;"
+                  url="https://www.strategyzer.com/canvas/business-model-canvas">
+                </app-url-item>
               </ion-list>
             </ion-label>
           </ion-item>

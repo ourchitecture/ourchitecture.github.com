@@ -1,0 +1,7 @@
+<ion-item (click)="select()" button detail>
+  <ion-icon name="videocam-outline" slot="start"></ion-icon>
+  <ion-thumbnail slot="start">
+    <img [alt]="'Video thumbnail of ' + title" [src]="'/assets/thumbnails/videos/' + thumbnailImageFilePath" />
+  </ion-thumbnail>
+  <ion-label>{{title}}</ion-label>
+</ion-item>

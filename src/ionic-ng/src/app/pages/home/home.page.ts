@@ -84,12 +84,12 @@ export class HomePage {
     this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
   }
 
-  async openVideo(title, url: string) {
+  async openVideo(selectedVideo) {
     const playVideoModal = await this.modalController.create({
       component: PlayVideoComponent,
       componentProps: {
-        title: title,
-        url: this.sanitizer.bypassSecurityTrustResourceUrl(url),
+        title: selectedVideo.title,
+        url: this.sanitizer.bypassSecurityTrustResourceUrl(selectedVideo.url),
         modalController: this.modalController,
       },
       canDismiss: true,
@@ -108,6 +108,9 @@ export class HomePage {
         url: url,
         modalController: this.modalController,
       },
+      canDismiss: true,
+      keyboardClose: true,
+      showBackdrop: true,
     });
 
     await leavingSiteModal.present();
