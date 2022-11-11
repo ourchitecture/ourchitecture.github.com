@@ -7,6 +7,7 @@ import { ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
 import { LeavingSiteComponent } from '../../components/modals/leaving-site/leaving-site.component';
+import { PlayVideoComponent } from '../../components/modals/play-video/play-video.component';
 
 const STORAGE_KEYS_APP_DARK_MODE = 'app_dark-mode';
 
@@ -83,18 +84,20 @@ export class HomePage {
     this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
   }
 
-  openVideo(title, url: string) {
-    this.selectedVideo = {
-      title,
-      url: this.sanitizer.bypassSecurityTrustResourceUrl(url),
-    };
+  async openVideo(title, url: string) {
+    const playVideoModal = await this.modalController.create({
+      component: PlayVideoComponent,
+      componentProps: {
+        title: title,
+        url: this.sanitizer.bypassSecurityTrustResourceUrl(url),
+        modalController: this.modalController,
+      },
+      canDismiss: true,
+      keyboardClose: true,
+      showBackdrop: true,
+    });
 
-    console.log('open video', this.selectedVideo);
-  }
-
-  closeVideo() {
-    console.log('close video');
-    this.selectedVideo = null;
+    await playVideoModal.present();
   }
 
   async openLeavingSite(url: string) {
