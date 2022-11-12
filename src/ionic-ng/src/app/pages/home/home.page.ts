@@ -1,5 +1,3 @@
-import { DomSanitizer } from '@angular/platform-browser';
-
 import { Component } from '@angular/core';
 
 import { ModalController } from '@ionic/angular';
@@ -26,7 +24,6 @@ export class HomePage {
 
   constructor(
     private modalController: ModalController,
-    private sanitizer: DomSanitizer,
     private storage: Storage) {
   }
 
@@ -89,7 +86,7 @@ export class HomePage {
       component: PlayVideoComponent,
       componentProps: {
         title: selectedVideo.title,
-        url: this.sanitizer.bypassSecurityTrustResourceUrl(selectedVideo.url),
+        url: selectedVideo.url,
         modalController: this.modalController,
       },
       canDismiss: true,
