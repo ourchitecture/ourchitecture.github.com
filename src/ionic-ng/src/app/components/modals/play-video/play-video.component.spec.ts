@@ -9,8 +9,11 @@ describe('PlayVideoComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlayVideoComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [  ],
+      imports: [
+        IonicModule.forRoot(),
+        PlayVideoComponent,
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlayVideoComponent);

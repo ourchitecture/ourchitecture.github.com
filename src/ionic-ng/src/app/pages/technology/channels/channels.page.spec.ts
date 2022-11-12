@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
+import { FooterComponentModule } from '../../../components/page/footer/footer.module';
+
 import { ChannelsPage } from './channels.page';
 
 describe('ChannelsPage', () => {
@@ -10,7 +12,7 @@ describe('ChannelsPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ChannelsPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), FooterComponentModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChannelsPage);

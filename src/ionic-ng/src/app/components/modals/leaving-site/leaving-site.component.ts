@@ -1,11 +1,18 @@
 import { Component, Input } from '@angular/core';
 
-import { ModalController } from '@ionic/angular';
+import {
+  IonicModule,
+  ModalController,
+} from '@ionic/angular';
 
 @Component({
+  standalone: true,
   selector: 'app-leaving-site',
   templateUrl: './leaving-site.component.html',
   styleUrls: ['./leaving-site.component.scss'],
+  imports: [
+    IonicModule,
+  ],
 })
 export class LeavingSiteComponent {
 

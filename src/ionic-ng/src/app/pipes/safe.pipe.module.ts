@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LeavingSiteComponent } from './leaving-site.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule,],
-  declarations: [LeavingSiteComponent],
-  exports: [LeavingSiteComponent]
+  declarations: [SafePipe],
+  exports: [SafePipe]
 })
-export class LeavingSiteComponentModule {}
+export class SafePipeModule {}

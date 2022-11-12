@@ -27,7 +27,6 @@ const routes: Routes = [
     path: 'technology',
     loadChildren: () => import('./pages/technology/technology.module').then( m => m.TechnologyPageModule)
   },
-
 ];
 
 @NgModule({

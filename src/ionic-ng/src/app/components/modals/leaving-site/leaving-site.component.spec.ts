@@ -9,8 +9,8 @@ describe('LeavingSiteComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeavingSiteComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [  ],
+      imports: [IonicModule.forRoot(), LeavingSiteComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LeavingSiteComponent);
