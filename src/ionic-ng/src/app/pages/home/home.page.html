@@ -110,6 +110,52 @@
               </ion-list>
             </ion-label>
           </ion-item>
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <h2>Business Capability Models and Maps</h2>
+              <p>
+                It is critical that an organization can clearly communicate the capabilities of
+                the organization and how those capabilities provide value out to customers, through partners,
+                in to associates, and out to community.
+              </p>
+              <blockquote>
+                "... capability models focus on helping an organization continually improve
+                and progress, realizing that the technological and business landscape is ever-changing."
+                (Forsgren, Nicole, et al. <em>Accelerate</em>. IT Revolution Press, 2018)
+              </blockquote>
+              <ion-list lines="full">
+                <app-video-item
+                  (visit)="openVideo($event)"
+                  title="Dr. Raj Ramesh: How to start using Business Architecture?"
+                  thumbnailImageFilePath="youtube.com/dr-raj-ramesh_how-to-start-using-business-architecture.jpg"
+                  url="https://www.youtube.com/embed/_CT9ZUb1ZJ4">
+                </app-video-item>
+                <app-video-item
+                  (visit)="openVideo($event)"
+                  title="Glenn Smyth: Enterprise Architecture - Business Capability Modelling"
+                  thumbnailImageFilePath="youtube.com/glenn-smyth_ enterprise-architecture_business-capability-modelling.jpg"
+                  url="https://www.youtube.com/embed/YN0bhNDCX-s">
+                </app-video-item>
+                <app-video-item
+                  (visit)="openVideo($event)"
+                  title="The Open Group: TOGAF&reg; Business Architecture: Business Capability Guide"
+                  thumbnailImageFilePath="youtube.com/the-open-group_togaf-business-architecture_business-capability-guide.jpg"
+                  url="https://www.youtube.com/embed/epQ09u9hUCw">
+                </app-video-item>
+                <app-book-item
+                  (visit)="openLeavingSite($event)"
+                  title="Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations"
+                  thumbnailImageFileName="it-revolution_accelerate_building-and-scaling-high-performing-technology-organizations.jpg"
+                  url="https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339/ref=sr_1_1?crid=3JFRPVVLMOHW&keywords=accelerate&qid=1668641329&s=books&sprefix=acceler%2Cstripbooks%2C412&sr=1-1">
+                </app-book-item>
+                <app-url-item
+                  (visit)="openLeavingSite($event)"
+                  title="Example: Salesforce &quot;Industry Blueprint for Retail&quot;"
+                  url="https://help.salesforce.com/s/articleView?id=sf.icx_b2c_industry_blueprint.htm&type=5">
+                </app-url-item>
+              </ion-list>
+            </ion-label>
+          </ion-item>
         </ion-list>
       </ion-card-content>
     </ion-card>
