@@ -21,6 +21,7 @@ export class HomePage {
   selectedVideo = null;
   leavingSiteIsVisible = false;
   leavingSiteUrl = null;
+  logo = "assets/icon/favicon-light.svg";
 
   constructor(
     private modalController: ModalController,
@@ -32,6 +33,12 @@ export class HomePage {
 
     this.wasDarkModeToggleEnabled = await this.getIsDarkModeEnabledFromStorage();
     this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
+
+    this.setLogo(this.isDarkModeToggleEnabled);
+  }
+
+  private setLogo(isDarkMode: boolean) {
+    this.logo = isDarkMode ? "assets/icon/favicon-dark.svg" : "assets/icon/favicon-light.svg";
   }
 
   async getIsDarkModeEnabledFromStorage() {
@@ -79,6 +86,8 @@ export class HomePage {
 
     // update the toggled setting
     this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
+
+    this.setLogo(this.isDarkModeToggleEnabled);
   }
 
   async openVideo(selectedVideo) {

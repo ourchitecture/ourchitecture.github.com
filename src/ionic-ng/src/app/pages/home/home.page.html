@@ -3,7 +3,10 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Ourchitecture</ion-title>
+    <ion-title>
+      <ion-icon [src]="logo"></ion-icon>
+      &nbsp;Ourchitecture
+    </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="toggleDarkMode()">
         <ion-icon name="contrast-outline" slot="start"></ion-icon>
@@ -16,7 +19,10 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Ourchitecture</ion-title>
+      <ion-title size="large">
+        <ion-icon [src]="logo"></ion-icon>
+        &nbsp;Ourchitecture
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
