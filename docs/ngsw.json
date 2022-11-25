@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1668654662874,
+  "timestamp": 1669412989679,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -24,7 +24,7 @@
         "/2175.54d869c7de7e2aaf.js",
         "/2289.ca5383a046e56098.js",
         "/2349.237a370011409342.js",
-        "/2512.6a56f51dc66bc41e.js",
+        "/2512.272ad02426239fe4.js",
         "/2698.091c6952271181ff.js",
         "/2773.0a20f1089cf2e7fc.js",
         "/3093.b0d982cac94748ff.js",
@@ -76,12 +76,12 @@
         "/common.1c65167bcdd50931.js",
         "/favicon.ico",
         "/index.html",
-        "/main.2595ee49d1cd7c58.js",
+        "/main.61e97767a32c135d.js",
         "/manifest.webmanifest",
         "/polyfills-core-js.b3eb16f0f64e9b8c.js",
         "/polyfills-dom.3a5e3168052f1fc5.js",
         "/polyfills.a20780bee94baa08.js",
-        "/runtime.aa5f0e4616c5ae08.js",
+        "/runtime.22dab8f3b524652f.js",
         "/styles.06addf99d97c1a84.css"
       ],
       "patterns": []
@@ -155,7 +155,7 @@
     "/2175.54d869c7de7e2aaf.js": "83f7201474e1ccb0603ccaa309ce177b79d740d2",
     "/2289.ca5383a046e56098.js": "bd65975f74d9ecd8dce75aba0bff3bfb77180d36",
     "/2349.237a370011409342.js": "4e2b3cd456b361e9db60087d1702f434349a79cf",
-    "/2512.6a56f51dc66bc41e.js": "576f70e2d7448a2911d3b97108c424e9e7130373",
+    "/2512.272ad02426239fe4.js": "301587129f01fe6c857a8e670936e4e6c3056a16",
     "/2698.091c6952271181ff.js": "6531465995f4cff4ed0cd99ac5f5d03faa3b56e6",
     "/2773.0a20f1089cf2e7fc.js": "dbe24587e85afcba0d9948f5eeae9581f8b838dc",
     "/3093.b0d982cac94748ff.js": "ca643e9a61b84ffe15aea1f7ed1717a04910d99f",
@@ -248,13 +248,13 @@
     "/assets/thumbnails/videos/youtube.com/the-open-group_togaf-business-architecture_business-capability-guide.jpg": "e1e0d76d36ea4719a01f80c5c9f79f1104c301df",
     "/common.1c65167bcdd50931.js": "21182797d8345c531d5f944bb7737394996ca8e3",
     "/favicon.ico": "54c566f0404b5d220f68ec97ed64f3a61730b287",
-    "/index.html": "e50f3d07270dd3429f3c5d65b368f3c6ae2a1ca9",
-    "/main.2595ee49d1cd7c58.js": "461d86d9901b756c282b403b794cf4658d5506d5",
+    "/index.html": "36e7230d46e9e253c57a9f6ef1638825ad004798",
+    "/main.61e97767a32c135d.js": "3576e103811fbafdedcb7563449dd8867e0c4f55",
     "/manifest.webmanifest": "93b3d0fe655bdffed113f231418c769af5d55172",
     "/polyfills-core-js.b3eb16f0f64e9b8c.js": "74f73ddfbee814abfb2702e1dd9ca4c9ddb994c5",
     "/polyfills-dom.3a5e3168052f1fc5.js": "50f6ff473a0568bffb8a9d412d7efaced2d36137",
     "/polyfills.a20780bee94baa08.js": "d4487d600064e0cffdd6c414f1b90c8908987215",
-    "/runtime.aa5f0e4616c5ae08.js": "66e42b38874dd0ad518c54a91a88063431365d6f",
+    "/runtime.22dab8f3b524652f.js": "58fc9eaee096fb8378eeca56cf35ce7818233eb7",
     "/styles.06addf99d97c1a84.css": "e983ec0384c63e7a718dd9b906d30d8783b5e2a0"
   },
   "navigationUrls": [
