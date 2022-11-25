@@ -8,16 +8,16 @@
       &nbsp;Ourchitecture
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="toggleDarkMode()">
+      <ion-button (click)="toggleDarkMode()" title="Toggle display between light and dark mode">
         <ion-icon name="contrast-outline" slot="start"></ion-icon>
-        Toggle Dark Mode
+        <ion-text class="ion-hide-sm-down">Display Mode</ion-text>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header [translucent]="true" collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
         <ion-icon [src]="logo"></ion-icon>
@@ -25,7 +25,6 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-
   <div>
     <ion-card>
       <ion-card-header>
