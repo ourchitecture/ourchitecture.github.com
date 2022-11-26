@@ -30,6 +30,9 @@ check:
 start:
 	@yarn start
 
+.PHONY: dev
+dev: start
+
 .PHONY: component
 component:
 ifndef path
