@@ -3,6 +3,11 @@
 .PHONY: all
 all: init install check
 
+.PHONY: nvm
+nvm:
+	@nvm use $(cat ./.nvmrc)
+	@npm install --location=global npm yarn
+
 .PHONY: init
 init:
 	@export CI=1 \
