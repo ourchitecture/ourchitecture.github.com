@@ -8,9 +8,9 @@ import { FooterComponent } from '../../components/page/footer/footer.component';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
-import { BookItemComponentModule } from '../../components/list/book-item/book-item.module';
-import { UrlItemComponentModule } from '../../components/list/url-item/url-item.module';
-import { VideoItemComponentModule } from '../../components/list/video-item/video-item.module';
+import { BookItemComponent } from '../../components/list/book-item/book-item.component';
+import { UrlItemComponent } from '../../components/list/url-item/url-item.component';
+import { VideoItemComponent } from '../../components/list/video-item/video-item.component';
 
 @NgModule({
   imports: [
@@ -19,9 +19,9 @@ import { VideoItemComponentModule } from '../../components/list/video-item/video
     IonicModule,
     HomePageRoutingModule,
     FooterComponent,
-    BookItemComponentModule,
-    UrlItemComponentModule,
-    VideoItemComponentModule,
+    BookItemComponent,
+    UrlItemComponent,
+    VideoItemComponent,
   ],
   declarations: [HomePage]
 })

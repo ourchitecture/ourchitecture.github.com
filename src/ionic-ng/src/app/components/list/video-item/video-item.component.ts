@@ -1,6 +1,14 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+
 @Component({
+  standalone: true,
+  imports: [
+    CommonModule,
+    IonicModule,
+  ],
   selector: 'app-video-item',
   templateUrl: './video-item.component.html',
   styleUrls: ['./video-item.component.scss'],
