@@ -6,7 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PeoplePageRoutingModule } from './people-routing.module';
 
-import { FooterComponentModule } from '../../components/page/footer/footer.module';
+import { HeaderComponent  } from '../../components/page/header/header.component';
+import { FooterComponent } from '../../components/page/footer/footer.component';
 
 import { PeoplePage } from './people.page';
 
@@ -16,7 +17,8 @@ import { PeoplePage } from './people.page';
     FormsModule,
     IonicModule,
     PeoplePageRoutingModule,
-    FooterComponentModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   declarations: [PeoplePage]
 })

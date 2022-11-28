@@ -6,7 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PlatformsPageRoutingModule } from './platforms-routing.module';
 
-import { FooterComponentModule } from '../../../components/page/footer/footer.module';
+import { HeaderComponent } from '../../../components/page/header/header.component';
+import { FooterComponent } from '../../../components/page/footer/footer.component';
 
 import { PlatformsPage } from './platforms.page';
 
@@ -16,7 +17,8 @@ import { PlatformsPage } from './platforms.page';
     FormsModule,
     IonicModule,
     PlatformsPageRoutingModule,
-    FooterComponentModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   declarations: [PlatformsPage]
 })

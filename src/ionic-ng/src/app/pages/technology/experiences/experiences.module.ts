@@ -6,7 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { ExperiencesPageRoutingModule } from './experiences-routing.module';
 
-import { FooterComponentModule } from '../../../components/page/footer/footer.module';
+import { HeaderComponent } from '../../../components/page/header/header.component';
+import { FooterComponent } from '../../../components/page/footer/footer.component';
 
 import { ExperiencesPage } from './experiences.page';
 
@@ -16,7 +17,8 @@ import { ExperiencesPage } from './experiences.page';
     FormsModule,
     IonicModule,
     ExperiencesPageRoutingModule,
-    FooterComponentModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   declarations: [ExperiencesPage]
 })

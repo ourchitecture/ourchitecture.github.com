@@ -6,7 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { ValuePageRoutingModule } from './value-routing.module';
 
-import { FooterComponentModule } from '../../components/page/footer/footer.module';
+import { HeaderComponent } from '../../components/page/header/header.component';
+import { FooterComponent } from '../../components/page/footer/footer.component';
 
 import { ValuePage } from './value.page';
 
@@ -16,7 +17,8 @@ import { ValuePage } from './value.page';
     FormsModule,
     IonicModule,
     ValuePageRoutingModule,
-    FooterComponentModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   declarations: [ValuePage]
 })

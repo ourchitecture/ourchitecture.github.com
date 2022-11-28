@@ -32,13 +32,3 @@ start:
 
 .PHONY: dev
 dev: start
-
-.PHONY: component
-component:
-ifndef path
-	$(error Missing required argument "path")
-endif
-	@yarn ionic generate \
-		component \
-			components/$(path) \
-			--create-module

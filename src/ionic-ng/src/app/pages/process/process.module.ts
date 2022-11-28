@@ -6,7 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { ProcessPageRoutingModule } from './process-routing.module';
 
-import { FooterComponentModule } from '../../components/page/footer/footer.module';
+import { HeaderComponent } from '../../components/page/header/header.component';
+import { FooterComponent } from '../../components/page/footer/footer.component';
 
 import { ProcessPage } from './process.page';
 
@@ -16,7 +17,8 @@ import { ProcessPage } from './process.page';
     FormsModule,
     IonicModule,
     ProcessPageRoutingModule,
-    FooterComponentModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   declarations: [ProcessPage]
 })

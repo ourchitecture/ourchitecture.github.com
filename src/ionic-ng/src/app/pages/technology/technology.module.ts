@@ -6,7 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { TechnologyPageRoutingModule } from './technology-routing.module';
 
-import { FooterComponentModule } from '../../components/page/footer/footer.module';
+import { HeaderComponent } from '../../components/page/header/header.component';
+import { FooterComponent } from '../../components/page/footer/footer.component';
 
 import { TechnologyPage } from './technology.page';
 
@@ -16,7 +17,8 @@ import { TechnologyPage } from './technology.page';
     FormsModule,
     IonicModule,
     TechnologyPageRoutingModule,
-    FooterComponentModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   declarations: [TechnologyPage]
 })

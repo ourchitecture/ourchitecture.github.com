@@ -6,7 +6,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { CapabilitiesPageRoutingModule } from './capabilities-routing.module';
 
-import { FooterComponentModule } from '../../../components/page/footer/footer.module';
+import { HeaderComponent } from '../../../components/page/header/header.component';
+import { FooterComponent } from '../../../components/page/footer/footer.component';
 
 import { CapabilitiesPage } from './capabilities.page';
 
@@ -16,7 +17,8 @@ import { CapabilitiesPage } from './capabilities.page';
     FormsModule,
     IonicModule,
     CapabilitiesPageRoutingModule,
-    FooterComponentModule,
+    HeaderComponent,
+    FooterComponent,
   ],
   declarations: [CapabilitiesPage]
 })
