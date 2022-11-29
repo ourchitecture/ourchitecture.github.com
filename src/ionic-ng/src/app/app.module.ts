@@ -19,11 +19,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
+    // https://ionicframework.com/docs/angular/pwa
+    // https://angular.io/guide/service-worker-communications
+    // https://angular.io/guide/service-worker-config
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
     BrowserAnimationsModule,
   ],
