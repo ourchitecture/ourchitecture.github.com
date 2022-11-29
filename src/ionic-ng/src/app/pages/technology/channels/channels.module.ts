@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+
+import { CovalentCommonModule } from '@covalent/core/common';
+import { CovalentMarkdownModule } from '@covalent/markdown';
 
 import { ChannelsPageRoutingModule } from './channels-routing.module';
 
@@ -14,12 +16,13 @@ import { ChannelsPage } from './channels.page';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
+    CovalentCommonModule,
+    CovalentMarkdownModule,
     ChannelsPageRoutingModule,
     HeaderComponent,
     FooterComponent,
   ],
   declarations: [ChannelsPage]
 })
-export class ChannelsPageModule {}
+export class ChannelsPageModule { }

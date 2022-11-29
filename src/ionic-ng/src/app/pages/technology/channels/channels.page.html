@@ -1,13 +1,9 @@
 <ion-header [translucent]="true">
-  <app-header title="Technology Channels" icon="phone-portrait-outline"></app-header>
+  <app-header title="Technology Channels"></app-header>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title><ion-icon name="megaphone-outline"></ion-icon> Coming soon!</ion-card-title>
-    </ion-card-header>
-  </ion-card>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <td-markdown>{{ content }}</td-markdown>
 </ion-content>
 
 <app-footer></app-footer>

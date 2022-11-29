@@ -1,15 +1,36 @@
 <ion-header [translucent]="true">
-  <app-header title="People" icon="people-outline"></app-header>
+  <app-header title="People"></app-header>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
       <ion-card-title>
-        <ion-icon name="megaphone-outline"></ion-icon>
-        Coming soon!
+        Resources
       </ion-card-title>
     </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-list lines="full">
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="Peter Drucker: &quot;The Drucker Library&quot; Boxed Set"
+                thumbnailImageFileName="peter-drucker_the-drucker-library-boxed-set.jpg"
+                url="https://a.co/d/aMdwtNb">
+              </app-book-item>
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="Peopleware: Productive Projects and Teams"
+                thumbnailImageFileName="tom-demarco_peopleware-productive-projects-and-teams.jpg"
+                url="https://a.co/d/3klkunX">
+              </app-book-item>
+            </ion-list>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
   </ion-card>
 </ion-content>
 

@@ -1,6 +1,12 @@
 <ion-toolbar>
   <ion-buttons slot="start">
-    <ion-back-button defaultHref="home"></ion-back-button>
+    <ion-back-button></ion-back-button>
   </ion-buttons>
-  <ion-title><ion-icon [name]="titleIcon"></ion-icon> {{title}}</ion-title>
+  <ion-title><ion-icon [src]="logo"></ion-icon> {{title}}</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="toggleDarkMode()" title="Toggle display between light and dark mode">
+      <ion-icon name="contrast-outline" slot="start"></ion-icon>
+      <ion-text class="ion-hide-sm-down">Display Mode</ion-text>
+    </ion-button>
+  </ion-buttons>
 </ion-toolbar>

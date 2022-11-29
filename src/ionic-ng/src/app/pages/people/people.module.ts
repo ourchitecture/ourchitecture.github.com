@@ -9,6 +9,8 @@ import { PeoplePageRoutingModule } from './people-routing.module';
 import { HeaderComponent  } from '../../components/page/header/header.component';
 import { FooterComponent } from '../../components/page/footer/footer.component';
 
+import { BookItemComponent } from '../../components/list/book-item/book-item.component';
+
 import { PeoplePage } from './people.page';
 
 @NgModule({
@@ -19,6 +21,7 @@ import { PeoplePage } from './people.page';
     PeoplePageRoutingModule,
     HeaderComponent,
     FooterComponent,
+    BookItemComponent,
   ],
   declarations: [PeoplePage]
 })

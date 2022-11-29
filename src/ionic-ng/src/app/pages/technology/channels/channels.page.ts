@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChannelsPage implements OnInit {
 
+  content = `
+## Channels
+
+Examples of digital channels include:
+
+- Chat
+- E-mail
+- Native Device Applications (including Mobile)
+- Social Media
+- Voice
+- Web
+`;
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }

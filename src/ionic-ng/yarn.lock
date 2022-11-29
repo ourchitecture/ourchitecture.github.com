@@ -1353,6 +1353,41 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
+"@covalent/core@^4.12.3":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@covalent/core/-/core-4.12.3.tgz#b15cbce9721e3c16d52385b20f3cd1d7f924666c"
+  integrity sha512-osiS2SL7uELCAwAbHjPQQ2tPj1FvaR8Me5ihBVpvbK+kpFLAw3fElZfF+iqGsRBvPsIhYoyKSQ5BD2fu8HSVjA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@covalent/flavored-markdown@^4.12.3":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@covalent/flavored-markdown/-/flavored-markdown-4.12.3.tgz#dc8168872086713228a9d2101c71efc73e2163a7"
+  integrity sha512-1VcqxRYOO5Nk0bw7kZfY2sDJxsqo16inI7cyOWThoeHELUuE7sf/IT8ZIbm9PljE7t7QdIfhOdUQCdw63curfg==
+  dependencies:
+    tslib "^2.0.0"
+
+"@covalent/highlight@^4.12.3":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@covalent/highlight/-/highlight-4.12.3.tgz#358d44b99386abaef4722cb4af62e7f38bc08894"
+  integrity sha512-F/FUrUzKEVUPveOo7Ir0gDIELkugAAu20pE6Vt0+5Bdf7jMVzb5iNN06UywkEzUKFh5lNDXMS8eNBCoamqnyzw==
+  dependencies:
+    tslib "^2.0.0"
+
+"@covalent/markdown-navigator@^4.12.3":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@covalent/markdown-navigator/-/markdown-navigator-4.12.3.tgz#10b30334bfd0cdc1a4bfa19e1250946e51c8d0ea"
+  integrity sha512-aPCBr3wW8fEVWBR6/lLpBkjlprK6/NhlvJlzhtzZ19HYWZSLCz/XN58yItP7FpOo0t0xkKXMPw3ZnfrY5msWRQ==
+  dependencies:
+    tslib "^2.0.0"
+
+"@covalent/markdown@^4.12.3":
+  version "4.12.3"
+  resolved "https://registry.yarnpkg.com/@covalent/markdown/-/markdown-4.12.3.tgz#dfc3f62c557c6fa80651557a17dadf46db76b74c"
+  integrity sha512-My+xLdvkaR2RMfvl/dJ9CjbSw/JTePEXqo/vHWl5eWdS9ssHfB2dYZRqKGjLSjEzqRLrZuepMo3q2brRlelKjA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@cypress/request@^2.88.10":
   version "2.88.10"
   resolved "https://registry.yarnpkg.com/@cypress/request/-/request-2.88.10.tgz#b66d76b07f860d3a4b8d7a0604d020c662752cce"
@@ -3804,7 +3839,7 @@ commander@^5.1.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
   integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
 
-commander@^9.3.0:
+commander@^9.0.0, commander@^9.3.0:
   version "9.4.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-9.4.1.tgz#d1dd8f2ce6faf93147295c0df13c7c21141cfbdd"
   integrity sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==
@@ -5505,6 +5540,11 @@ hdr-histogram-percentiles-obj@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/hdr-histogram-percentiles-obj/-/hdr-histogram-percentiles-obj-3.0.0.tgz#9409f4de0c2dda78e61de2d9d78b1e9f3cba283c"
   integrity sha512-7kIufnBqdsBGcSZLPJwqHT3yhk1QTsSlFsVD3kx5ixH/AlgBs9yM1q6DPhXZ8f8gtdqgh7N7/5btRLpQsS2gHw==
+
+highlight.js@^11.7.0:
+  version "11.7.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.7.0.tgz#3ff0165bc843f8c9bce1fd89e2fda9143d24b11e"
+  integrity sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==
 
 hosted-git-info@^2.1.4:
   version "2.8.9"
@@ -8340,6 +8380,13 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+
+showdown@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/showdown/-/showdown-2.1.0.tgz#1251f5ed8f773f0c0c7bfc8e6fd23581f9e545c5"
+  integrity sha512-/6NVYu4U819R2pUIk79n67SYgJHWCce0a5xTP979WbNp0FL9MN1I1QK662IDU1b6JzKTvmhgI7T7JYIxBi3kMQ==
+  dependencies:
+    commander "^9.0.0"
 
 side-channel@^1.0.4:
   version "1.0.4"

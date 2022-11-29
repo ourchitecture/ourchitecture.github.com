@@ -9,6 +9,12 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "node_modules/@covalent/core/theming/all-theme";
+@import "node_modules/@covalent/markdown/markdown-theme";
+@import "node_modules/@covalent/flavored-markdown/flavored-markdown-theme";
+@import "node_modules/@covalent/highlight/_highlight-theme";
+
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
 

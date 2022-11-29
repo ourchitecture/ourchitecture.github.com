@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
+import { HeaderComponent } from '../../components/page/header/header.component';
 import { FooterComponent } from '../../components/page/footer/footer.component';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -18,6 +19,7 @@ import { VideoItemComponent } from '../../components/list/video-item/video-item.
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
+    HeaderComponent,
     FooterComponent,
     BookItemComponent,
     UrlItemComponent,

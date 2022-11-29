@@ -1,19 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>
-      <ion-icon [src]="logo"></ion-icon>
-      &nbsp;Ourchitecture
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="toggleDarkMode()" title="Toggle display between light and dark mode">
-        <ion-icon name="contrast-outline" slot="start"></ion-icon>
-        <ion-text class="ion-hide-sm-down">Display Mode</ion-text>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+  <app-header title="Home"></app-header>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -26,6 +12,46 @@
     </ion-toolbar>
   </ion-header>
   <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>High Fidelity Understanding and Alignment</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <blockquote>
+          "Understanding one another can be difficult; understanding complex organizations with layers of communications is much harder."
+        </blockquote>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="swap-vertical-outline" slot="start"></ion-icon>
+            <p>
+              Vertical alignment ensures that associates and their leadership understand one another.
+            </p>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="swap-horizontal-outline" slot="start"></ion-icon>
+            <p>
+              Horizontal alignment ensures that associates, their teams, and their organizational
+              structures understand one another across the organization. This includes teams,
+              product groups, initiatives and programs, communities, departments, divisions, and
+              business units.
+            </p>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="business-outline" slot="start"></ion-icon>
+            <p>
+              Fundamentally, the business objectives must align; this includes intentional,
+              cooperative competition or "coopetition" within the organization.
+            </p>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="phone-portrait" slot="start"></ion-icon>
+            <p>
+              Technology objectives, in support of the business, must also align.
+            </p>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
     <ion-card>
       <ion-card-header>
         <ion-card-title>Organizational Foundations</ion-card-title>
