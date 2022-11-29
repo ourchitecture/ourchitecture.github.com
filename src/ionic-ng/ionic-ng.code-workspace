@@ -1,6 +1,11 @@
 {
 	"folders": [
 		{
+			"name": ".github",
+			"path": "../../.github"
+		},
+		{
+			"name": "ionic-ng",
 			"path": "."
 		}
 	]
