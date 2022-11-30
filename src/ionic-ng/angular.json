@@ -25,6 +25,11 @@
                 "output": "./"
               },
               {
+                "glob": "**/*.json",
+                "input": "src/api",
+                "output": "api"
+              },
+              {
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"

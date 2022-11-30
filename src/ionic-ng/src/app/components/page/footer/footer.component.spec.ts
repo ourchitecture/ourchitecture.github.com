@@ -9,8 +9,8 @@ describe('FooterComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [ ],
+      imports: [FooterComponent, IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);

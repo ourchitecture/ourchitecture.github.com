@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
+import * as lunr from 'lunr';
+
 const STORAGE_KEYS_APP_DARK_MODE = 'app_dark-mode';
 
 @Component({
@@ -24,6 +26,14 @@ export class HeaderComponent implements OnInit {
 
   logo = "assets/icons/favicon-light.svg";
 
+  searchDocuments: any[] = [];
+  searchIndex: any = {};
+
+  searchQuery = '';
+  isSearchResultsVisible = false;
+  isSearchResultsLoading = false;
+  searchResults: any[] = [];
+
   constructor(private storage: Storage) { }
 
   async ngOnInit() {
@@ -33,6 +43,22 @@ export class HeaderComponent implements OnInit {
     this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
 
     this.setLogo(this.isDarkModeToggleEnabled);
+
+    const searchIndexDataResponse = await fetch('/api/data/search-index.json');
+
+    if (searchIndexDataResponse.ok) {
+      const searchIndexData = await searchIndexDataResponse.json();
+
+      // console.log('search index fetched', searchIndexData);
+
+      this.searchDocuments = searchIndexData.documents;
+      this.searchIndex = lunr.Index.load(searchIndexData.index);
+    } else {
+      const responseText = await searchIndexDataResponse.text();
+
+      // TODO: log errors
+      console.error('Failed to retrieve search index', searchIndexDataResponse.status, searchIndexDataResponse.statusText, responseText);
+    }
   }
 
   public async toggleDarkMode() {
@@ -59,6 +85,70 @@ export class HeaderComponent implements OnInit {
     this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
 
     this.setLogo(this.isDarkModeToggleEnabled);
+  }
+
+  public searchKeyUp(event: any) {
+    switch (event.keyCode) {
+      // return / enter
+      case 13:
+        this.submitSearch();
+        break;
+    }
+  }
+
+  public async loadSearchResults() {
+    try {
+      console.debug('Searching for', this.searchQuery);
+
+      const rawSearchResults = this.searchIndex.search(this.searchQuery);
+
+      this.searchResults = rawSearchResults
+        .slice(0, 15)
+        .map((result) => {
+          const matchingDocument = this.searchDocuments.find((d) => d.id === result.ref);
+
+          if (!matchingDocument) {
+            // TODO: log errors
+            console.error('Failed to find a matching document for the search index result', result.ref);
+          }
+
+          return {
+            id: result.ref,
+            url: matchingDocument?.url,
+            title: matchingDocument?.title,
+          };
+        });
+
+      console.debug('search results', this.searchResults);
+    } catch(e) {
+      console.error('Unexpected search error', e);
+    }
+    finally {
+      this.isSearchResultsLoading = false;
+    }
+  }
+
+  public async search(event: any) {
+    this.searchQuery = event.target.value.trim();
+  }
+
+  public async submitSearch() {
+    if (this.searchQuery.length > 0) {
+      this.searchResults = [];
+      this.isSearchResultsLoading = true;
+      this.isSearchResultsVisible = true;
+      await this.loadSearchResults();
+    }
+  }
+
+  public dismissSearchResults() {
+    this.searchResults = [];
+    this.isSearchResultsLoading = false;
+    this.isSearchResultsVisible = false;
+  }
+
+  public getSearchResultTracker(index: number, searchResult: any) {
+    return searchResult.id;
   }
 
   private async getIsDarkModeEnabledFromStorage() {

@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { IonicModule } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 import { HeaderComponent } from './header.component';
 
@@ -9,8 +11,9 @@ describe('HeaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [ ],
+      imports: [HeaderComponent, IonicModule.forRoot()],
+      providers: [Storage],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);

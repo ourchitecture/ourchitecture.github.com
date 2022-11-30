@@ -9,8 +9,8 @@ describe('UrlItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ UrlItemComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [ ],
+      imports: [UrlItemComponent, IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(UrlItemComponent);
