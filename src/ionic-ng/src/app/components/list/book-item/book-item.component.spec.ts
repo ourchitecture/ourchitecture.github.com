@@ -9,8 +9,8 @@ describe('BookItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookItemComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [  ],
+      imports: [BookItemComponent, IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BookItemComponent);

@@ -1,6 +1,6 @@
 describe('Home Page', () => {
-  it('Gets a coming soon message', () => {
+  it('Gets page title', () => {
     cy.visit('/')
-    cy.contains('Coming soon!')
+    cy.contains('Ourchitecture')
   })
 })

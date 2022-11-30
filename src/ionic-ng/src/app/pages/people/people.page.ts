@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { ModalController } from '@ionic/angular';
 
@@ -11,7 +12,14 @@ import { BasePageComponent } from 'src/app/components/page/base';
 })
 export class PeoplePage extends BasePageComponent {
 
-  constructor(modalController: ModalController) {
+  constructor(
+    modalController: ModalController,
+    private titleService: Title
+  ) {
     super(modalController);
+  }
+
+  ngOnInit() {
+    this.titleService.setTitle('People');
   }
 }

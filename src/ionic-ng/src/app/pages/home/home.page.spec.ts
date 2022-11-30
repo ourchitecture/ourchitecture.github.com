@@ -4,10 +4,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
-import { BookItemComponentModule } from '../../components/list/book-item/book-item.module';
-import { UrlItemComponentModule } from '../../components/list/url-item/url-item.module';
-import { VideoItemComponentModule } from '../../components/list/video-item/video-item.module';
-import { FooterComponentModule } from '../../components/page/footer/footer.module';
+import { HeaderComponent } from '../../components/page/header/header.component';
+import { FooterComponent } from '../../components/page/footer/footer.component';
+
+import { BookItemComponent } from '../../components/list/book-item/book-item.component';
+import { UrlItemComponent } from '../../components/list/url-item/url-item.component';
+import { VideoItemComponent } from '../../components/list/video-item/video-item.component';
 
 import { HomePage } from './home.page';
 
@@ -21,10 +23,11 @@ describe('HomePage', () => {
       imports: [
         IonicModule.forRoot(),
         RouterTestingModule,
-        BookItemComponentModule,
-        UrlItemComponentModule,
-        VideoItemComponentModule,
-        FooterComponentModule,
+        HeaderComponent,
+        FooterComponent,
+        BookItemComponent,
+        UrlItemComponent,
+        VideoItemComponent,
       ],
       providers: [Storage],
     }).compileComponents();

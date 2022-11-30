@@ -19,12 +19,24 @@ install:
 	&& yarn build \
 	&& cp ./www/index.html ./www/404.html
 
-.PHONY: check
-check:
+.PHONY: check-unit
+check-unit:
 	@export CI=1 \
 	&& yarn test \
 		--code-coverage \
 		--configuration=ci
+
+.PHONY: check-e2e
+check-e2e:
+	@export CI=1 \
+	&& yarn e2e \
+		--browser=chrome \
+		--headless \
+		--watch=false \
+		--exit
+
+.PHONY: check
+check: check-unit check-e2e
 
 .PHONY: start
 start:
@@ -32,3 +44,15 @@ start:
 
 .PHONY: dev
 dev: start
+
+.PHONY: dev-test
+dev-test:
+	@yarn test
+
+.PHONY: dev-e2e
+dev-e2e:
+	@yarn e2e
+
+.PHONY: search
+search:
+	@yarn node ./build-search-index
