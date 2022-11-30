@@ -22,6 +22,8 @@ describe('Build Search Index', function() {
       searchEngine.ref('id');
 
       searchEngine.field('title');
+      searchEngine.field('description');
+      searchEngine.field('keywords');
       searchEngine.field('body');
 
       searchIndexDocuments.forEach((searchIndexDocument) => {
@@ -29,7 +31,19 @@ describe('Build Search Index', function() {
       });
     });
 
-    cy.writeFile('./src/api/search-index.json', JSON.stringify(searchIndex), 'utf-8');
+    const searchIndexData = {
+      index: searchIndex,
+      documents: searchIndexDocuments.map((doc) => {
+        return {
+          id: doc.id,
+          url: doc.url,
+          title: doc.title,
+          description: doc.description,
+        };
+      }),
+    };
+
+    cy.writeFile('./src/api/search-index.json', JSON.stringify(searchIndexData), 'utf-8');
   });
 
   const convertUrlToId = (url: string) => {
@@ -66,10 +80,20 @@ describe('Build Search Index', function() {
           cy.document().then((doc => {
             cy.log('Page title', doc.title);
 
+            const metaDescription = doc.querySelector('meta[name="description"]');
+            const description = metaDescription ? metaDescription.getAttribute('content') : '';
+            const metaKeywords = doc.querySelector('meta[name="keywords"]');
+            const keywords = metaKeywords ? metaKeywords.getAttribute('content').split(',') : '';
+
+            cy.log('Page description', description);
+            cy.log('Page keywords', keywords);
+
             const searchIndexDocument = {
               id: convertUrlToId(url),
               url: url,
               title: doc.title ? doc.title : '',
+              description: description,
+              keywords: keywords,
               body: doc.body ? doc.body.innerText || doc.body.textContent : '',
             };
 

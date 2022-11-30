@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-technology',
@@ -8,9 +8,25 @@ import { Title } from '@angular/platform-browser';
 })
 export class TechnologyPage implements OnInit {
 
-  constructor(private titleService: Title) { }
+  constructor(private metaService: Meta, private titleService: Title) {}
 
   ngOnInit() {
     this.titleService.setTitle('Technology');
+
+    this.metaService.updateTag(
+      {
+        name: 'description',
+        content: 'Technology enables organizations to collaborate toward creating, building and delivering value',
+      },
+      'name=description'
+    );
+
+    this.metaService.updateTag(
+      {
+        name: 'keywords',
+        content: 'technology,capabilities,channels,experiences,journeys,platforms',
+      },
+      'name=keywords'
+    );
   }
 }

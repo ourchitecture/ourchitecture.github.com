@@ -38,6 +38,16 @@ check-e2e:
 .PHONY: check
 check: check-unit check-e2e
 
+.PHONY: search-index
+search-index:
+	@export CI=1 \
+	&& yarn e2e \
+		--spec="**/search-index**" \
+		--browser=chrome \
+		--headless \
+		--watch=false \
+		--exit
+
 .PHONY: start
 start:
 	@yarn start
