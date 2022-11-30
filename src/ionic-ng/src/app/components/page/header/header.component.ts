@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
 
     this.setLogo(this.isDarkModeToggleEnabled);
 
-    const searchIndexDataResponse = await fetch('/api/search-index.json');
+    const searchIndexDataResponse = await fetch('/api/data/search-index.json');
 
     if (searchIndexDataResponse.ok) {
       const searchIndexData = await searchIndexDataResponse.json();

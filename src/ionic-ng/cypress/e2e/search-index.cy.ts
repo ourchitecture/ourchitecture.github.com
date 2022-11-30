@@ -43,7 +43,7 @@ describe('Build Search Index', function() {
       }),
     };
 
-    cy.writeFile('./src/api/search-index.json', JSON.stringify(searchIndexData), 'utf-8');
+    cy.writeFile('./src/api/data/search-index.json', JSON.stringify(searchIndexData), 'utf-8');
   });
 
   const convertUrlToId = (url: string) => {
