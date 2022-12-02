@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1670015856239,
+  "timestamp": 1670016947107,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -60,7 +60,7 @@
         "/8136.1eab3bed2a0a0750.js",
         "/8186.30171254239defc5.js",
         "/8628.84f52f7a9294d266.js",
-        "/8785.04fe1c201b69d350.js",
+        "/8785.05e9932efac7d1b5.js",
         "/8871.9b8b441128d6768b.js",
         "/8939.e268846754d2f8fb.js",
         "/9016.c9db6e7c0f38d6ae.js",
@@ -82,7 +82,7 @@
         "/polyfills-core-js.c8961a92c3ed4c69.js",
         "/polyfills-dom.5c5f23fb57b03028.js",
         "/polyfills.9bc834106dfa609b.js",
-        "/runtime.fb79b56faa515018.js",
+        "/runtime.cee1d1bfe38f2349.js",
         "/styles.44f42d4f1c39310a.css"
       ],
       "patterns": []
@@ -206,7 +206,7 @@
     "/8136.1eab3bed2a0a0750.js": "8c8a9751ec2448157e30973690fe1ee49081a1e1",
     "/8186.30171254239defc5.js": "7080b7a67333278760a406b508be5521cb2e2dbc",
     "/8628.84f52f7a9294d266.js": "4242231726f64d5e490b254528755511a8b4527d",
-    "/8785.04fe1c201b69d350.js": "316d01cc92d849fcd176321fdec562324a4bd0a7",
+    "/8785.05e9932efac7d1b5.js": "e3e5b7250588377d6e84467a5f4225b2d2bd2c6c",
     "/8871.9b8b441128d6768b.js": "65d8911059f72ed5fdf8f263f993ee9099f88f98",
     "/8939.e268846754d2f8fb.js": "a24672312feb75b36d60d5eca2bc30281416b4c0",
     "/9016.c9db6e7c0f38d6ae.js": "1e22cc2bb592c06d335cb9b9ff155a6e2e4698d7",
@@ -267,13 +267,13 @@
     "/assets/thumbnails/videos/youtube.com/the-open-group_togaf-business-architecture_business-capability-guide.jpg": "e1e0d76d36ea4719a01f80c5c9f79f1104c301df",
     "/common.97af1da2a28b7801.js": "2801ca79766c93dfd56a06b29fdbfec17b10a6cc",
     "/favicon.ico": "54c566f0404b5d220f68ec97ed64f3a61730b287",
-    "/index.html": "4350ccbdd598f44219ccfbe1864c024a9107def4",
+    "/index.html": "95b1c1db014d63b1231d63b8f86d8c5584d39a1d",
     "/main.9abfdd961488e79a.js": "15b421b38aaef9c97841c6695656028fd9600667",
     "/manifest.webmanifest": "93b3d0fe655bdffed113f231418c769af5d55172",
     "/polyfills-core-js.c8961a92c3ed4c69.js": "e44d42a08762418090a95d81b35288ab338d21e8",
     "/polyfills-dom.5c5f23fb57b03028.js": "06f5dc30f55bf9a3d9c6f9bca07c0041a6bbdaa0",
     "/polyfills.9bc834106dfa609b.js": "2af84eddd26b2166b2feae5fe76720edde371c19",
-    "/runtime.fb79b56faa515018.js": "ffb97033612d56c4440eacc19cb9bde75a512fc4",
+    "/runtime.cee1d1bfe38f2349.js": "1cd56d590c8ff9e7e6cd85f7655b4491da73e512",
     "/styles.44f42d4f1c39310a.css": "a47bd20430ab4f7dfb9126e7e370fe02d3d879e0"
   },
   "navigationUrls": [
