@@ -7,8 +7,7 @@ name: main_push
 
 # place "magic strings" used in the workflow here for convenient maintenance
 env:
-  # this variable is used to compare against forked repositories
-  OUR_REPO: "ourchitecture/ourchitecture.github.com"
+  CI: true
   OUR_AUTODOC_COMMIT: "docs: auto-generated documentation"
   OUR_AUTODOC_DESC: "Automatically generated documentation that requires a PR, because the main branch is protected."
   OUR_AUTODOC_LABELS: "documentation"
@@ -24,11 +23,10 @@ on:
 
 jobs:
   integration:
+    # Cannot use `env`: https://github.com/actions/runner/issues/1189#issuecomment-880110759
+    # do not run on forks
     # run build if not a create PR patch
-    if: ${{ github.repository == env.OUR_REPO && !contains(github.event.head_commit.message, 'ourchitecture/create-pull-request/patch') }}
-
-    env:
-      CI: true
+    if: ${{ github.repository == 'ourchitecture/ourchitecture.github.com' && !contains(github.event.head_commit.message, 'ourchitecture/create-pull-request/patch') }}
 
     runs-on: ubuntu-latest
 
@@ -55,7 +53,7 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
-        if: ${{ github.event_name == 'push' && github.repository == env.OUR_REPO }}
+        if: ${{ github.event_name == 'push' }}
         with:
           title: ${{ env.OUR_AUTODOC_COMMIT }}
           signoff: true
