@@ -1,5 +1,9 @@
-# This is a basic workflow to help you get started with Actions
-name: DevOps
+################################################################################
+# 1. Runs checks and install on "main".
+# 2. Creates a PR containing the "./docs" output
+# 3. Skips building that same PR again when pushed back to "main".
+################################################################################
+name: main_push
 
 # place "magic strings" used in the workflow here for convenient maintenance
 env:
@@ -16,51 +20,49 @@ env:
 
 on:
   push:
-    branches: [ 'main' ]
+    branches: ["main"]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  integration:
+    # run build if not a create PR patch
+    if: "!contains(github.event.head_commit.message, 'ourchitecture/create-pull-request/patch')"
 
-    integration:
+    env:
+      CI: true
 
-        env:
-            CI: true
+    runs-on: ubuntu-latest
 
-        # The type of runner that the job will run on
-        runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
 
-        strategy:
-            matrix:
-                node-version: [18.x]
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
 
-        # Steps represent a sequence of tasks that will be executed as part of the job
-        steps:
-            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-            - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          # See: https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
+          cache: "yarn"
+          cache-dependency-path: "./**/yarn.lock"
 
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
-              with:
-                node-version: ${{ matrix.node-version }}
-                # See: https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
-                cache: 'yarn'
-                cache-dependency-path: './**/yarn.lock'
+      - name: install
+        run: |
+          make install
+          sudo chown -R $(whoami) ./docs
 
-            - name: install
-              run: |
-                make install
-                sudo chown -R $(whoami) ./docs
-
-            - name: Create Pull Request
-              uses: peter-evans/create-pull-request@v4
-              if: ${{ github.event_name == 'push' && github.repository == env.OUR_REPO }}
-              with:
-                title: ${{ env.OUR_AUTODOC_COMMIT }}
-                signoff: true
-                commit-message: "${{ env.OUR_AUTODOC_COMMIT }} ${{ env.OUR_SKIP_CI }}"
-                body: ${{ env.OUR_AUTODOC_DESC }}
-                labels: ${{ env.OUR_AUTODOC_LABELS }}
-                assignees: ${{ env.OUR_AUTODOC_ASSIGNEES }}
-                # a PAT was generated to support this field
-                # see: https://github.com/peter-evans/create-pull-request/issues/155
-                team-reviewers: ${{ env.OUR_AUTODOC_REVIEWERS }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        if: ${{ github.event_name == 'push' && github.repository == env.OUR_REPO }}
+        with:
+          title: ${{ env.OUR_AUTODOC_COMMIT }}
+          signoff: true
+          commit-message: "${{ env.OUR_AUTODOC_COMMIT }} ${{ env.OUR_SKIP_CI }}"
+          body: ${{ env.OUR_AUTODOC_DESC }}
+          labels: ${{ env.OUR_AUTODOC_LABELS }}
+          assignees: ${{ env.OUR_AUTODOC_ASSIGNEES }}
+          # a PAT was generated to support this field
+          # see: https://github.com/peter-evans/create-pull-request/issues/155
+          team-reviewers: ${{ env.OUR_AUTODOC_REVIEWERS }}
