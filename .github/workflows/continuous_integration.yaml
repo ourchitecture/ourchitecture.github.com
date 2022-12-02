@@ -22,11 +22,8 @@ env:
   OUR_SKIP_CI: "[skip ci]"
   OUR_CREATE_PR: "ourchitecture/create-pull-request/patch"
 
-on:
-  push:
-    branches: ["*"]
-  pull_request:
-    branches: ["*"]
+# Trigger the workflow on push or pull request.
+on: [push, pull_request]
 
 jobs:
   integration:
