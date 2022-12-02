@@ -38,3 +38,4 @@ main:
 	@git sync
 	@git checkout main
 	@git sync
+	@git prune-branches
