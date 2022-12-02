@@ -25,7 +25,7 @@ on:
 jobs:
   integration:
     # run build if not a create PR patch
-    if: "!contains(github.event.head_commit.message, 'ourchitecture/create-pull-request/patch')"
+    if: ${{ github.repository == env.OUR_REPO && !contains(github.event.head_commit.message, 'ourchitecture/create-pull-request/patch') }}
 
     env:
       CI: true

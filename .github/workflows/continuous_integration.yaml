@@ -3,6 +3,11 @@
 ################################################################################
 name: continuous_integration
 
+# place "magic strings" used in the workflow here for convenient maintenance
+env:
+  # this variable is used to compare against forked repositories
+  OUR_REPO: "ourchitecture/ourchitecture.github.com"
+
 on:
   push:
     branches: ["*", "!main"]
@@ -11,6 +16,8 @@ on:
 
 jobs:
   integration:
+    if: ${{ github.repository == env.OUR_REPO }}
+
     env:
       CI: true
 
