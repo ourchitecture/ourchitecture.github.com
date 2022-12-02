@@ -1,7 +1,7 @@
 .DEFAULT_GOAL:=all
 
 .PHONY: all
-all: init install check
+all: init check install
 
 .PHONY: nvm
 nvm:
@@ -12,12 +12,6 @@ nvm:
 init:
 	@export CI=1 \
 	&& yarn install --frozen-lockfile --immutable
-
-.PHONY: install
-install:
-	@export CI=1 \
-	&& yarn build \
-	&& cp ./www/index.html ./www/404.html
 
 .PHONY: check-unit
 check-unit:
@@ -37,6 +31,12 @@ check-e2e:
 
 .PHONY: check
 check: check-unit check-e2e
+
+.PHONY: install
+install:
+	@export CI=1 \
+	&& yarn build \
+	&& cp ./www/index.html ./www/404.html
 
 .PHONY: search-index
 search-index:
