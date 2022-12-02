@@ -62,7 +62,3 @@ dev-test:
 .PHONY: dev-e2e
 dev-e2e:
 	@yarn e2e
-
-.PHONY: search
-search:
-	@yarn node ./build-search-index

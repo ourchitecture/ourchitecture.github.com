@@ -22,6 +22,10 @@ install:
 	&& "$(MAKE)" $@ \
 	&& cp -r ./www/ ../../docs/
 
+.PHONY: search-index
+search-index:
+	@cd $(site_path) && "$(MAKE)" $@
+
 .PHONY: start
 start:
 	@cd $(site_path) && "$(MAKE)" $@

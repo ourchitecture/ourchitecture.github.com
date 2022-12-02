@@ -1,12 +1,23 @@
 {
-	"folders": [
-		{
-			"name": ".github",
-			"path": "../../.github"
-		},
-		{
-			"name": "ionic-ng",
-			"path": "."
-		}
-	]
+  "folders": [
+    {
+      "name": ".github",
+      "path": "../../.github"
+    },
+    {
+      "name": "ionic-ng",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true
+  },
+  "extensions": {
+    "recommendations": [
+      "EditorConfig.EditorConfig",
+      "Angular.ng-template",
+      "Ionic.ionic",
+      "esbenp.prettier-vscode"
+    ]
+  }
 }
