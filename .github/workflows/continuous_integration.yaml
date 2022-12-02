@@ -3,6 +3,10 @@
 ################################################################################
 name: continuous_integration
 
+# place "magic strings" used in the workflow here for convenient maintenance
+env:
+  CI: true
+
 on:
   push:
     branches: ["*", "!main"]
@@ -11,8 +15,9 @@ on:
 
 jobs:
   integration:
-    env:
-      CI: true
+    # Cannot use `env`: https://github.com/actions/runner/issues/1189#issuecomment-880110759
+    # do not run on forks
+    if: ${{ github.repository == 'ourchitecture/ourchitecture.github.com' }}
 
     runs-on: ubuntu-latest
 
