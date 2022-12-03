@@ -54,7 +54,7 @@ jobs:
 
       - name: install
         run: |
-          make install
+          make all
           sudo chown -R $(whoami) ./docs
 
       - name: Create Pull Request

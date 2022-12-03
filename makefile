@@ -2,28 +2,37 @@ site_path=./src/ionic-ng/
 
 .DEFAULT_GOAL:=all
 
+# NOTE: Do not defer to project `all` since `install`
+#       is a little different in the root.
 .PHONY: all
-all:
-	@cd $(site_path) && "$(MAKE)" $@
+all: init check install
 
 .PHONY: init
 init:
+	@cd $(site_path) && "$(MAKE)" $@
+
+.PHONY: check
+check:
 	@cd $(site_path) && "$(MAKE)" $@
 
 .PHONY: install
 install:
 	@rm -rf ./docs/ \
 	&& cd $(site_path) \
-	&& "$(MAKE)" init $@ \
+	&& "$(MAKE)" $@ \
 	&& cp -r ./www/ ../../docs/
 
-.PHONY: check
-check:
-	@cd $(site_path) && "$(MAKE)" init $@
+.PHONY: search-index
+search-index:
+	@cd $(site_path) && "$(MAKE)" $@
 
 .PHONY: start
 start:
-	@cd $(site_path) && "$(MAKE)" init $@
+	@cd $(site_path) && "$(MAKE)" $@
+
+.PHONY: dev
+dev:
+	@cd $(site_path) && "$(MAKE)" $@
 
 .PHONY: sync
 sync:

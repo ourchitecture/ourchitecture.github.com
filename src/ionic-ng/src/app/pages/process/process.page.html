@@ -5,8 +5,98 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-card-title><ion-icon name="megaphone-outline"></ion-icon> Coming soon!</ion-card-title>
+      <ion-card-title> Resources </ion-card-title>
     </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-list lines="full">
+              <app-url-item
+                (visit)="openLeavingSite($event)"
+                title="The Agile Manifesto"
+                url="https://agilemanifesto.org/"
+              >
+              </app-url-item>
+              <app-url-item
+                (visit)="openLeavingSite($event)"
+                title="DevOps: A Primer for the Business Leader"
+                url="https://itrevolution.com/articles/devops-a-primer/"
+              >
+              </app-url-item>
+              <app-video-item
+                (visit)="openVideo($event)"
+                title='Agile with Jimmy: Autonomy doesn&apos;t mean "do whatever"'
+                thumbnailImageFilePath="youtube.com/agile-with-jimmy_autonomy-doesnt-mean-do-whatever.jpg"
+                url="https://www.youtube.com/embed/RiKN7x1ppRE"
+              >
+              </app-video-item>
+              <app-video-item
+                (visit)="openVideo($event)"
+                title="Coding Tech: Lean vs Agile vs Design Thinking"
+                thumbnailImageFilePath="youtube.com/coding-tech_lean-vs-agile-vs-design-thinking.jpg"
+                url="https://www.youtube.com/embed/_4VPfmtwRac"
+              >
+              </app-video-item>
+              <app-video-item
+                (visit)="openVideo($event)"
+                title="CNCF: Lean DevOps - Building a Culture of Delivery "
+                thumbnailImageFilePath="youtube.com/cncf_lean-devops_building-a-culture-of-delivery.jpg"
+                url="https://www.youtube.com/embed/DsTSgSBSU7w"
+              >
+              </app-video-item>
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="Ash Maurya: Running Lean - Iterate from Plan A to a Plan That Works, 3rd Edition"
+                thumbnailImageFileName="ash-maurya_running-lean_iterate-from-plan-a-to-a-plan-that-works_3rd-edition.jpg"
+                url="https://a.co/d/aWoUjdP"
+              >
+              </app-book-item>
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="James Shore: The Art of Agile Development, 2nd Edition"
+                thumbnailImageFileName="james-shore_the-art-of-agile-development_2nd-edition.jpg"
+                url="https://a.co/d/5T6AJRG"
+              >
+              </app-book-item>
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="Nicole Forsgren PhD: Accelerate - The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations"
+                thumbnailImageFileName="nicole-forsgren-phd_accelerate-the-science-of-lean-software-and-devops_building-and-scaling-high-performing-technology-organizations.jpg"
+                url="https://a.co/d/cIZ4gV0"
+              >
+              </app-book-item>
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="Gene Kim: The DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations"
+                thumbnailImageFileName="gene-kim_the-devops-handbook_how-to-create-world-class-agility,-reliability,-&-security-in-technology-organizations.jpg"
+                url="https://a.co/d/7FGfapC"
+              >
+              </app-book-item>
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="Gene Kim: The Phoenix Project"
+                thumbnailImageFileName="gene-kim_the-phoenix-project.jpg"
+                url="https://a.co/d/8bG5dkT"
+              >
+              </app-book-item>
+              <app-book-item
+                (visit)="openLeavingSite($event)"
+                title="Gene Kim: The Unicorn Project"
+                thumbnailImageFileName="gene-kim_the-unicorn-project.jpg"
+                url="https://a.co/d/42c8ph2"
+              >
+              </app-book-item>
+              <!--
+                Kanban
+                Scrum
+                eXtreme Programming
+              -->
+            </ion-list>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
   </ion-card>
 </ion-content>
 

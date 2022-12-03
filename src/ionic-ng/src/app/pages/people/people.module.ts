@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { PeoplePageRoutingModule } from './people-routing.module';
 
-import { HeaderComponent  } from '../../components/page/header/header.component';
+import { HeaderComponent } from '../../components/page/header/header.component';
 import { FooterComponent } from '../../components/page/footer/footer.component';
 
 import { BookItemComponent } from '../../components/list/book-item/book-item.component';
@@ -23,6 +23,6 @@ import { PeoplePage } from './people.page';
     FooterComponent,
     BookItemComponent,
   ],
-  declarations: [PeoplePage]
+  declarations: [PeoplePage],
 })
 export class PeoplePageModule {}

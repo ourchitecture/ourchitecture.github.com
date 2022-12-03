@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 import { ModalController } from '@ionic/angular';
@@ -10,8 +10,7 @@ import { BasePageComponent } from 'src/app/components/page/base';
   templateUrl: './people.page.html',
   styleUrls: ['./people.page.scss'],
 })
-export class PeoplePage extends BasePageComponent {
-
+export class PeoplePage extends BasePageComponent implements OnInit {
   constructor(
     modalController: ModalController,
     private metaService: Meta,
@@ -26,7 +25,8 @@ export class PeoplePage extends BasePageComponent {
     this.metaService.updateTag(
       {
         name: 'description',
-        content: 'People are an organization\'s best resources, supported by technology and the processes they participate in',
+        content:
+          "People are an organization's best resources, supported by technology and the processes they participate in",
       },
       'name=description'
     );

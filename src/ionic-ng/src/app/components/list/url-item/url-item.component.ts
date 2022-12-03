@@ -5,22 +5,18 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule,
-    IonicModule,
-  ],
+  imports: [CommonModule, IonicModule],
   selector: 'app-url-item',
   templateUrl: './url-item.component.html',
   styleUrls: ['./url-item.component.scss'],
 })
 export class UrlItemComponent implements OnInit {
-
-  @Input() title = "";
-  @Input() url = "";
+  @Input() title = '';
+  @Input() url = '';
 
   @Output() visit = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 
