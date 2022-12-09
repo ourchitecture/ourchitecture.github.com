@@ -3,11 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'hello-cloud',
-    redirectTo: 'hello-cloud/index.html',
-    pathMatch: 'prefix',
-  },
-  {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
