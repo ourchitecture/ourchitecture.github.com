@@ -33,7 +33,11 @@ const routes: Routes = [
       import('./pages/technology/technology.module').then(
         (m) => m.TechnologyPageModule
       ),
+  },  {
+    path: 'assets',
+    loadChildren: () => import('./pages/assets/assets.module').then( m => m.AssetsPageModule)
   },
+
 ];
 
 @NgModule({

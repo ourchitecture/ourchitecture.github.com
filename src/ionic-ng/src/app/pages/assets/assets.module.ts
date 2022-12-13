@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ValuePageRoutingModule } from './value-routing.module';
+import { AssetsPageRoutingModule } from './assets-routing.module';
 
 import { HeaderComponent } from '../../components/page/header/header.component';
 import { FooterComponent } from '../../components/page/footer/footer.component';
 
-import { ValuePage } from './value.page';
+import { AssetsPage } from './assets.page';
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { ValuePage } from './value.page';
     IonicModule,
     HeaderComponent,
     FooterComponent,
-    ValuePageRoutingModule,
+    AssetsPageRoutingModule,
   ],
-  declarations: [ValuePage],
+  declarations: [AssetsPage],
 })
-export class ValuePageModule {}
+export class AssetsPageModule {}

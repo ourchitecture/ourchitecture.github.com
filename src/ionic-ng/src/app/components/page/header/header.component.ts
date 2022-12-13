@@ -1,30 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { Storage } from '@ionic/storage-angular';
 
 import * as lunr from 'lunr';
 
-const STORAGE_KEYS_APP_DARK_MODE = 'app_dark-mode';
+import { ThemeService } from '../../../services/theme.service';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule,
-    IonicModule,
-  ],
+  imports: [CommonModule, IonicModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
-  private wasDarkModeToggleEnabled = true;
-  private isDarkModeToggleEnabled = true;
-
   @Input() title: string;
 
-  logo = "assets/icons/favicon-light.svg";
+  logo = 'assets/icons/favicon-light.svg';
 
   searchDocuments: any[] = [];
   searchIndex: any = {};
@@ -34,15 +26,12 @@ export class HeaderComponent implements OnInit {
   isSearchResultsLoading = false;
   searchResults: any[] = [];
 
-  constructor(private storage: Storage) { }
+  constructor(private themeService: ThemeService) {}
 
   async ngOnInit() {
-    await this.storage?.create();
+    await this.themeService.initialize();
 
-    this.wasDarkModeToggleEnabled = await this.getIsDarkModeEnabledFromStorage();
-    this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
-
-    this.setLogo(this.isDarkModeToggleEnabled);
+    this.setLogo(this.themeService.getIsDarkModeEnabled());
 
     const searchIndexDataResponse = await fetch('/api/data/search-index.json');
 
@@ -57,34 +46,19 @@ export class HeaderComponent implements OnInit {
       const responseText = await searchIndexDataResponse.text();
 
       // TODO: log errors
-      console.error('Failed to retrieve search index', searchIndexDataResponse.status, searchIndexDataResponse.statusText, responseText);
+      console.error(
+        'Failed to retrieve search index',
+        searchIndexDataResponse.status,
+        searchIndexDataResponse.statusText,
+        responseText
+      );
     }
   }
 
   public async toggleDarkMode() {
-    if (!this.storage) {
-      return;
-    }
+    this.themeService.toggleDarkMode();
 
-    // out of sync detection
-    if (this.isDarkModeToggleEnabled != this.wasDarkModeToggleEnabled) {
-      return;
-    }
-
-    // remember the toggled setting
-    this.wasDarkModeToggleEnabled = !this.isDarkModeToggleEnabled;
-
-    // store the toggled setting
-    await this.storage.set(STORAGE_KEYS_APP_DARK_MODE, this.wasDarkModeToggleEnabled);
-
-    console.log('Toggling dark mode setting...');
-
-    document.body.classList.toggle('dark', this.wasDarkModeToggleEnabled);
-
-    // update the toggled setting
-    this.isDarkModeToggleEnabled = this.wasDarkModeToggleEnabled;
-
-    this.setLogo(this.isDarkModeToggleEnabled);
+    this.setLogo(this.themeService.getIsDarkModeEnabled());
   }
 
   public searchKeyUp(event: any) {
@@ -102,28 +76,30 @@ export class HeaderComponent implements OnInit {
 
       const rawSearchResults = this.searchIndex.search(this.searchQuery);
 
-      this.searchResults = rawSearchResults
-        .slice(0, 15)
-        .map((result) => {
-          const matchingDocument = this.searchDocuments.find((d) => d.id === result.ref);
+      this.searchResults = rawSearchResults.slice(0, 15).map((result) => {
+        const matchingDocument = this.searchDocuments.find(
+          (d) => d.id === result.ref
+        );
 
-          if (!matchingDocument) {
-            // TODO: log errors
-            console.error('Failed to find a matching document for the search index result', result.ref);
-          }
+        if (!matchingDocument) {
+          // TODO: log errors
+          console.error(
+            'Failed to find a matching document for the search index result',
+            result.ref
+          );
+        }
 
-          return {
-            id: result.ref,
-            url: matchingDocument?.url,
-            title: matchingDocument?.title,
-          };
-        });
+        return {
+          id: result.ref,
+          url: matchingDocument?.url,
+          title: matchingDocument?.title,
+        };
+      });
 
       console.debug('search results', this.searchResults);
-    } catch(e) {
+    } catch (e) {
       console.error('Unexpected search error', e);
-    }
-    finally {
+    } finally {
       this.isSearchResultsLoading = false;
     }
   }
@@ -137,6 +113,7 @@ export class HeaderComponent implements OnInit {
       this.searchResults = [];
       this.isSearchResultsLoading = true;
       this.isSearchResultsVisible = true;
+
       await this.loadSearchResults();
     }
   }
@@ -151,26 +128,9 @@ export class HeaderComponent implements OnInit {
     return searchResult.id;
   }
 
-  private async getIsDarkModeEnabledFromStorage() {
-    const storageIsDarkModeEnabled = await this.storage?.get(STORAGE_KEYS_APP_DARK_MODE);
-
-    let isDarkModeEnabled = true;
-
-    // if a preference has never been set, read the system preference
-    if (storageIsDarkModeEnabled == null) {
-      const isDarkModePreferred = window.matchMedia('(prefers-color-scheme: dark)');
-
-      isDarkModeEnabled = isDarkModePreferred ? true : false;
-    } else {
-      isDarkModeEnabled = storageIsDarkModeEnabled ? true : false;
-    }
-
-    document.body.classList.toggle('dark', isDarkModeEnabled);
-
-    return isDarkModeEnabled;
-  }
-
   private setLogo(isDarkMode: boolean) {
-    this.logo = isDarkMode ? "assets/icons/favicon-dark.svg" : "assets/icons/favicon-light.svg";
+    this.logo = isDarkMode
+      ? 'assets/icons/favicon-dark.svg'
+      : 'assets/icons/favicon-light.svg';
   }
 }

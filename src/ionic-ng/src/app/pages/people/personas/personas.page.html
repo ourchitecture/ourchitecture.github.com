@@ -1,0 +1,190 @@
+<ion-header [translucent]="true">
+  <app-header title="Personas"></app-header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Executive Leadership</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="cxo-examples">
+          <ion-item slot="header">
+            <ion-label>Examples</ion-label>
+          </ion-item>
+          <ion-list lines="full" slot="content">
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Chief Executive Officer</ion-label
+              >
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Chief Financial Officer</ion-label
+              >
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Chief Information Officer</ion-label
+              >
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Chief Security Officer</ion-label
+              >
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Chief Technology Officer</ion-label
+              >
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Chief Marketing Officer</ion-label
+              >
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Executive Vice President</ion-label
+              >
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap">Vice President</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap"
+                >Associate Vice President</ion-label
+              >
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Middle Management</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="mgr-examples">
+          <ion-item slot="header">
+            <ion-label>Examples</ion-label>
+          </ion-item>
+          <ion-list lines="full" slot="content">
+            <ion-item>
+              <ion-label class="ion-text-wrap">Managing Director</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap">Director</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap">Associate Director</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap">Sr. Manager</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label class="ion-text-wrap">Manager</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>The Context of Expertise</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label>Industry</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Organization / Enterprise</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Business Unit, Division, Department</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Delivery Channel</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>User Experience or Journey</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Domain: Business / Technology Capability</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Domain: Product or Service</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Initiative / Program / Project</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Technology</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Value Delivery Team</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>The Balance of Expertise</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label>Domain</ion-label>
+          <ion-range
+            [pin]="true"
+            [ticks]="true"
+            [snaps]="true"
+            [min]="0"
+            [max]="10"
+            [value]="7"
+          ></ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-label>People</ion-label>
+          <ion-range
+            [pin]="true"
+            [ticks]="true"
+            [snaps]="true"
+            [min]="0"
+            [max]="10"
+            [value]="4"
+          ></ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-label>Process</ion-label>
+          <ion-range
+            [pin]="true"
+            [ticks]="true"
+            [snaps]="true"
+            [min]="0"
+            [max]="10"
+            [value]="6"
+          ></ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-label>Technology</ion-label>
+          <ion-range
+            [pin]="true"
+            [ticks]="true"
+            [snaps]="true"
+            [min]="0"
+            [max]="10"
+            [value]="9"
+          ></ion-range>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<app-footer></app-footer>
