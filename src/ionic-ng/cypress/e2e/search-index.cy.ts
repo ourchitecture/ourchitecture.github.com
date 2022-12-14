@@ -1,22 +1,23 @@
 const lunr = require('lunr');
 
-const getDocumentElement = async (fluentDocument: Cypress.Chainable<Document>) => {
+const getDocumentElement = async (
+  fluentDocument: Cypress.Chainable<Document>
+) => {
   return new Promise<any>((resolve) => {
     fluentDocument.then((documentElement) => {
       resolve(documentElement);
     });
   });
-}
+};
 
-describe('Build Search Index', function() {
-
+describe('Build Search Index', function () {
   const searchIndexDocuments: any[] = [];
 
   // generate the search index after all tests have run
-  after(function() {
+  after(function () {
     // cy.writeFile('./search-index-docs.json', JSON.stringify(searchIndexDocuments), 'utf-8');
 
-    const searchIndex = lunr(function() {
+    const searchIndex = lunr(function () {
       const searchEngine = this;
 
       searchEngine.ref('id');
@@ -43,25 +44,28 @@ describe('Build Search Index', function() {
       }),
     };
 
-    cy.writeFile('./src/api/data/search-index.json', JSON.stringify(searchIndexData), 'utf-8');
+    cy.writeFile(
+      './src/api/data/search-index.json',
+      JSON.stringify(searchIndexData),
+      'utf-8'
+    );
   });
 
   const convertUrlToId = (url: string) => {
-      let id = url.replace(/\//g, '-');
+    let id = url.replace(/\//g, '-');
 
-      while (id.length > 0 && id.startsWith('-')) {
-        id = id.substring(1);
-      }
+    while (id.length > 0 && id.startsWith('-')) {
+      id = id.substring(1);
+    }
 
-      if (id.length === 0) {
-        id = 'home';
-      }
+    if (id.length === 0) {
+      id = 'home';
+    }
 
-      return id;
+    return id;
   };
 
-  it('Gets search content from pages', async() => {
-
+  it('Gets search content from pages', async () => {
     const searchTargets = [
       '/',
       '/people',
@@ -77,13 +81,19 @@ describe('Build Search Index', function() {
     const getSearchIndexDocuments = searchTargets.map((url) => {
       return new Promise((resolve) => {
         cy.visit(url).then(() => {
-          cy.document().then((doc => {
+          cy.document().then((doc) => {
             cy.log('Page title', doc.title);
 
-            const metaDescription = doc.querySelector('meta[name="description"]');
-            const description = metaDescription ? metaDescription.getAttribute('content') : '';
+            const metaDescription = doc.querySelector(
+              'meta[name="description"]'
+            );
+            const description = metaDescription
+              ? metaDescription.getAttribute('content')
+              : '';
             const metaKeywords = doc.querySelector('meta[name="keywords"]');
-            const keywords = metaKeywords ? metaKeywords.getAttribute('content').split(',') : '';
+            const keywords = metaKeywords
+              ? metaKeywords.getAttribute('content')?.split(',')
+              : '';
 
             cy.log('Page description', description);
             cy.log('Page keywords', keywords);
@@ -98,9 +108,9 @@ describe('Build Search Index', function() {
             };
 
             resolve(searchIndexDocument);
-          }));
+          });
         });
-      })
+      });
     });
 
     for (let getSearchIndexDocument of getSearchIndexDocuments) {
