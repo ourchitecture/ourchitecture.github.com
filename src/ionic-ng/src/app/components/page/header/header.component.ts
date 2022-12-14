@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 
-import * as lunr from 'lunr';
-
 import { ThemeService } from '../../../services/theme.service';
+import { SearchService } from '../../../services/search.service';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, HttpClientModule],
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -26,32 +26,29 @@ export class HeaderComponent implements OnInit {
   isSearchResultsLoading = false;
   searchResults: any[] = [];
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    private searchService: SearchService
+  ) {}
 
   async ngOnInit() {
-    await this.themeService.initialize();
+    try {
+      await this.themeService.initialize();
 
-    this.setLogo(this.themeService.getIsDarkModeEnabled());
+      this.setLogo(this.themeService.getIsDarkModeEnabled());
+    } catch (error) {
+      // TODO: log errors
+      console.error('Unexpected error initializing the ThemeService', error);
+    }
 
-    const searchIndexDataResponse = await fetch('/api/data/search-index.json');
-
-    if (searchIndexDataResponse.ok) {
-      const searchIndexData = await searchIndexDataResponse.json();
-
-      // console.log('search index fetched', searchIndexData);
+    try {
+      const searchIndexData = await this.searchService.getSearchIndexData();
 
       this.searchDocuments = searchIndexData.documents;
-      this.searchIndex = lunr.Index.load(searchIndexData.index);
-    } else {
-      const responseText = await searchIndexDataResponse.text();
-
+      this.searchIndex = searchIndexData.index;
+    } catch (error) {
       // TODO: log errors
-      console.error(
-        'Failed to retrieve search index',
-        searchIndexDataResponse.status,
-        searchIndexDataResponse.statusText,
-        responseText
-      );
+      console.error('Failed to retrieve search index', error);
     }
   }
 

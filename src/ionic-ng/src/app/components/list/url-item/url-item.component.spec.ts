@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { IonicModule } from '@ionic/angular';
 
 import { UrlItemComponent } from './url-item.component';
@@ -9,8 +10,8 @@ describe('UrlItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ],
-      imports: [UrlItemComponent, IonicModule.forRoot()]
+      declarations: [],
+      imports: [UrlItemComponent, IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(UrlItemComponent);

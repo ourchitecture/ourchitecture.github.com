@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { IonicModule } from '@ionic/angular';
 
 import { VideoItemComponent } from './video-item.component';
@@ -9,8 +10,8 @@ describe('VideoItemComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ],
-      imports: [VideoItemComponent, IonicModule.forRoot()]
+      declarations: [],
+      imports: [VideoItemComponent, IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(VideoItemComponent);

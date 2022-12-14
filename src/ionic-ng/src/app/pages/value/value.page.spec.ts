@@ -1,10 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { IonicModule } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
-
-import { HeaderComponent } from '../../components/page/header/header.component';
-import { FooterComponent } from '../../components/page/footer/footer.component';
+import { PageTestModule } from '../page.module.spec';
 
 import { ValuePage } from './value.page';
 
@@ -14,13 +10,8 @@ describe('ValuePage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ValuePage ],
-      imports: [
-        IonicModule.forRoot(),
-        HeaderComponent,
-        FooterComponent,
-      ],
-      providers: [Storage],
+      declarations: [ValuePage],
+      imports: [PageTestModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ValuePage);

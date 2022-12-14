@@ -1,10 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { IonicModule } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
-
-import { HeaderComponent } from '../../../components/page/header/header.component';
-import { FooterComponent } from '../../../components/page/footer/footer.component';
+import { PageTestModule } from '../../page.module.spec';
 
 import { ExperiencesPage } from './experiences.page';
 
@@ -14,13 +10,8 @@ describe('ExperiencesPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExperiencesPage ],
-      imports: [
-        IonicModule.forRoot(),
-        HeaderComponent,
-        FooterComponent,
-      ],
-      providers: [Storage],
+      declarations: [ExperiencesPage],
+      imports: [PageTestModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ExperiencesPage);

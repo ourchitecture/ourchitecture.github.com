@@ -25,6 +25,6 @@ import { VideoItemComponent } from '../../components/list/video-item/video-item.
     UrlItemComponent,
     VideoItemComponent,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
 })
 export class HomePageModule {}

@@ -1,7 +1,7 @@
 .DEFAULT_GOAL:=all
 
 .PHONY: all
-all: init check install
+all: init check search-index install
 
 .PHONY: nvm
 nvm:
@@ -15,10 +15,17 @@ init:
 
 .PHONY: check-unit
 check-unit:
+ifdef name
+	@yarn test \
+		--configuration=ci \
+		--watch=false \
+		--include=**/$(name).spec.ts
+else
 	@export CI=1 \
 	&& yarn test \
 		--code-coverage \
 		--configuration=ci
+endif
 
 .PHONY: check-e2e
 check-e2e:

@@ -1,12 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { IonicModule } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
+import { PageTestModule } from '../../page.module.spec';
 
 import { TdMarkdownComponent } from '@covalent/markdown';
-
-import { HeaderComponent } from '../../../components/page/header/header.component';
-import { FooterComponent } from '../../../components/page/footer/footer.component';
 
 import { ChannelsPage } from './channels.page';
 
@@ -16,13 +12,8 @@ describe('ChannelsPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChannelsPage, TdMarkdownComponent ],
-      imports: [
-        IonicModule.forRoot(),
-        HeaderComponent,
-        FooterComponent,
-      ],
-      providers: [Storage],
+      declarations: [ChannelsPage, TdMarkdownComponent],
+      imports: [PageTestModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ChannelsPage);

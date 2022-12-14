@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { IonicModule } from '@ionic/angular';
 
 import { PlayVideoComponent } from './play-video.component';
@@ -9,11 +10,8 @@ describe('PlayVideoComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [  ],
-      imports: [
-        IonicModule.forRoot(),
-        PlayVideoComponent,
-      ]
+      declarations: [],
+      imports: [IonicModule.forRoot(), PlayVideoComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlayVideoComponent);

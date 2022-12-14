@@ -1,11 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { IonicModule } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
-
-import { BookItemComponent } from '../../components/list/book-item/book-item.component';
-import { HeaderComponent } from '../../components/page/header/header.component';
-import { FooterComponent } from '../../components/page/footer/footer.component';
+import { PageTestModule } from '../page.module.spec';
 
 import { PeoplePage } from './people.page';
 
@@ -15,13 +10,8 @@ describe('PeoplePage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeoplePage ],
-      imports: [
-        IonicModule.forRoot(),
-        HeaderComponent,
-        FooterComponent,
-        BookItemComponent,
-      ],
+      declarations: [PeoplePage],
+      imports: [PageTestModule],
       providers: [Storage],
     }).compileComponents();
 

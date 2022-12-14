@@ -20,7 +20,7 @@ Examples of digital channels include:
 - Web
 `;
 
-constructor(private metaService: Meta, private titleService: Title) {}
+  constructor(private metaService: Meta, private titleService: Title) {}
 
   ngOnInit() {
     this.titleService.setTitle('Technology Channels');

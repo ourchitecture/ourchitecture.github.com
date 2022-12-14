@@ -1,10 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { IonicModule } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
-
-import { HeaderComponent } from '../../components/page/header/header.component';
-import { FooterComponent } from '../../components/page/footer/footer.component';
+import { PageTestModule } from '../page.module.spec';
 
 import { ProcessPage } from './process.page';
 
@@ -14,13 +10,8 @@ describe('ProcessPage', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProcessPage ],
-      imports: [
-        IonicModule.forRoot(),
-        HeaderComponent,
-        FooterComponent,
-      ],
-      providers: [Storage],
+      declarations: [ProcessPage],
+      imports: [PageTestModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProcessPage);

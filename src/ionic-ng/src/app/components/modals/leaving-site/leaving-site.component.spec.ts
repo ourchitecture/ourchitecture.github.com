@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { IonicModule } from '@ionic/angular';
 
 import { LeavingSiteComponent } from './leaving-site.component';
@@ -9,8 +10,8 @@ describe('LeavingSiteComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [  ],
-      imports: [IonicModule.forRoot(), LeavingSiteComponent]
+      declarations: [],
+      imports: [IonicModule.forRoot(), LeavingSiteComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LeavingSiteComponent);
