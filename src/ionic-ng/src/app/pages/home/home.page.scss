@@ -1,3 +1,12 @@
-h2 {
-  color: --ion-color-secondary;
+blockquote {
+  font-size: 1em;
+}
+
+.overview blockquote {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.overview p.ion-padding {
+  padding-left: 0;
 }

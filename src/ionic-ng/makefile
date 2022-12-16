@@ -39,6 +39,12 @@ check-e2e:
 .PHONY: check
 check: check-unit check-e2e
 
+.PHONY: test
+test: check-unit
+
+.PHONY: e2e
+e2e: check-e2e
+
 .PHONY: install
 install:
 	@export CI=1 \

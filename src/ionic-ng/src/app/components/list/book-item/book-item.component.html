@@ -1,7 +1,10 @@
-<ion-item (click)="select()" button detail>
+<ion-item (click)="select()" [color]="color" button detail>
   <ion-icon name="book-outline" slot="start"></ion-icon>
-  <ion-thumbnail slot="start">
-    <img [alt]="'Book cover of ' + title" [src]="'/assets/thumbnails/books/' + thumbnailImageFileName" />
+  <ion-thumbnail>
+    <img
+      [alt]="'Book cover of ' + title"
+      [src]="'/assets/thumbnails/books/' + thumbnailImageFileName"
+    />
   </ion-thumbnail>
-  <ion-label class="ion-text-wrap">{{title}}</ion-label>
+  <ion-label class="ion-text-wrap">{{ title }}</ion-label>
 </ion-item>

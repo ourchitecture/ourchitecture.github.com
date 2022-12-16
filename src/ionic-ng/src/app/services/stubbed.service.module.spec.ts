@@ -1,14 +1,24 @@
 import { NgModule, ProviderToken } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 
+import { RedirectService } from './redirect.service';
+import { getRedirectServiceSpy } from './redirect.service.spec';
+
 import { SearchService } from './search.service';
 import { getSearchServiceStub } from './search.service.spec';
 
 import { ThemeService } from './theme.service';
 import { getThemeServiceSpy } from './theme.service.spec';
 
+import { TimerService } from './timer.service';
+import { getTimerServiceSpy } from './timer.service.spec';
+
 @NgModule({
   providers: [
+    {
+      provide: RedirectService,
+      useValue: getRedirectServiceSpy(),
+    },
     {
       provide: SearchService,
       useValue: getSearchServiceStub(),
@@ -16,6 +26,10 @@ import { getThemeServiceSpy } from './theme.service.spec';
     {
       provide: ThemeService,
       useValue: getThemeServiceSpy(),
+    },
+    {
+      provide: TimerService,
+      useValue: getTimerServiceSpy(),
     },
   ],
 })

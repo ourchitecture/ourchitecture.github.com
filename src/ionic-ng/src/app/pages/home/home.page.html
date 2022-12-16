@@ -9,7 +9,7 @@
     </ion-toolbar>
   </ion-header>
   <div>
-    <ion-card>
+    <ion-card class="overview" color="medium">
       <ion-card-header>
         <ion-card-title color="primary"
           >High Fidelity Understanding and Alignment</ion-card-title
@@ -23,14 +23,14 @@
         <ion-list>
           <ion-item>
             <ion-icon name="swap-vertical-outline" slot="start"></ion-icon>
-            <p>
+            <p class="ion-padding">
               Vertical alignment ensures that associates and their leadership
               understand one another.
             </p>
           </ion-item>
           <ion-item>
             <ion-icon name="swap-horizontal-outline" slot="start"></ion-icon>
-            <p>
+            <p class="ion-padding">
               Horizontal alignment ensures that associates, their teams, and
               their organizational structures understand one another across the
               organization. This includes teams, product groups, initiatives and
@@ -39,7 +39,7 @@
           </ion-item>
           <ion-item>
             <ion-icon name="business-outline" slot="start"></ion-icon>
-            <p>
+            <p class="ion-padding">
               Fundamentally, the business objectives must align; this includes
               intentional, cooperative competition or "coopetition" within the
               organization.
@@ -47,7 +47,7 @@
           </ion-item>
           <ion-item>
             <ion-icon name="phone-portrait" slot="start"></ion-icon>
-            <p>
+            <p class="ion-padding">
               Technology objectives, in support of the business, must also
               align.
             </p>
@@ -62,7 +62,7 @@
         >
       </ion-card-header>
       <ion-card-content>
-        <ion-list lines="full">
+        <ion-list lines="none">
           <ion-item>
             <ion-label class="ion-text-wrap">
               <h2 color="secondary">Mission, Vision and Values</h2>
@@ -72,7 +72,7 @@
                 achieve, and the core principles that guide and direct the
                 organization.
               </p>
-              <ion-list lines="full">
+              <ion-list lines="inset">
                 <app-video-item
                   (visit)="openVideo($event)"
                   title="365 Careers: The Mission, Vision, and Values statements"
@@ -99,7 +99,7 @@
                 purpose and to let the "Why" inform "How" the organization works
                 to fulfill its purpose and the "What".
               </p>
-              <ion-list lines="full">
+              <ion-list lines="inset">
                 <app-video-item
                   (visit)="openVideo($event)"
                   title="Simon Sinek: Find your why"
@@ -132,7 +132,7 @@
                 topology of capturing and communicating an organization's
                 business model with the "Business Model Canvas".
               </p>
-              <ion-list lines="full">
+              <ion-list lines="inset">
                 <app-video-item
                   (visit)="openVideo($event)"
                   title="Strategyzer: Business Model Canvas explained"
@@ -172,7 +172,7 @@
                 (Forsgren, Nicole, et al. <em>Accelerate</em>. IT Revolution
                 Press, 2018)
               </blockquote>
-              <ion-list lines="full">
+              <ion-list lines="inset">
                 <app-video-item
                   (visit)="openVideo($event)"
                   title="Dr. Raj Ramesh: How to start using Business Architecture?"
@@ -227,7 +227,7 @@
           carefully chosen to focus on People-first and the Value they work to
           provide, supported by Technology and Process.
         </p>
-        <ion-list lines="full">
+        <ion-list lines="inset">
           <ion-item [routerLink]="['/people']" detail>
             <ion-icon name="people-outline" slot="start"></ion-icon>
             <ion-label class="ion-text-wrap">

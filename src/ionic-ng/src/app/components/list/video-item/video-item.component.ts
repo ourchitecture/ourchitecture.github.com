@@ -5,23 +5,20 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule,
-    IonicModule,
-  ],
+  imports: [CommonModule, IonicModule],
   selector: 'app-video-item',
   templateUrl: './video-item.component.html',
   styleUrls: ['./video-item.component.scss'],
 })
 export class VideoItemComponent implements OnInit {
-
-  @Input() title = "";
-  @Input() url = "";
-  @Input() thumbnailImageFilePath = "";
+  @Input() title = '';
+  @Input() url = '';
+  @Input() thumbnailImageFilePath = '';
+  @Input() color = '';
 
   @Output() visit = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 

@@ -3,7 +3,13 @@ import { Component, Input, OnInit, Inject, OnDestroy } from '@angular/core';
 
 import { IonicModule, ModalController } from '@ionic/angular';
 
-const INITIAL_SECONDS_LEFT = 10;
+import {
+  TimerService,
+  TimerOptions,
+  TimerHandle,
+} from '../../../services/timer.service';
+
+export const INITIAL_SECONDS_LEFT = 10;
 
 @Component({
   standalone: true,
@@ -19,23 +25,34 @@ export class LeavingSiteComponent implements OnInit, OnDestroy {
 
   secondsLeft: number = INITIAL_SECONDS_LEFT;
 
-  private redirectTimer: NodeJS.Timer;
+  private redirectTimerHandle: TimerHandle;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(
+    private timerService: TimerService,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
-  ngOnInit(): void {
-    this.redirectTimer = setInterval(() => {
-      if (this.secondsLeft > 0) {
-        this.secondsLeft--;
-        return;
+  async ngOnInit(): Promise<void> {
+    const timerOptions: TimerOptions = {
+      durationInMs: INITIAL_SECONDS_LEFT,
+      repeat: true,
+    };
+
+    this.redirectTimerHandle = await this.timerService.start(
+      timerOptions,
+      () => {
+        if (this.secondsLeft > 0) {
+          this.secondsLeft--;
+          return;
+        }
+
+        if (this.secondsLeft <= 0) {
+          this.resetCountdown();
+          this.document.location.href = this.url;
+          return;
+        }
       }
-
-      if (this.secondsLeft <= 0) {
-        this.resetCountdown();
-        this.document.location.href = this.url;
-        return;
-      }
-    }, 1000);
+    );
   }
 
   ngOnDestroy() {
@@ -49,8 +66,12 @@ export class LeavingSiteComponent implements OnInit, OnDestroy {
 
   resetCountdown() {
     try {
-      clearInterval(this.redirectTimer);
+      this.timerService.stop(this.redirectTimerHandle);
     } catch (e) {}
     this.secondsLeft = INITIAL_SECONDS_LEFT;
+  }
+
+  private getWindow(): Window {
+    return this.document.defaultView;
   }
 }

@@ -5,23 +5,20 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule,
-    IonicModule,
-  ],
+  imports: [CommonModule, IonicModule],
   selector: 'app-book-item',
   templateUrl: './book-item.component.html',
   styleUrls: ['./book-item.component.scss'],
 })
 export class BookItemComponent implements OnInit {
-
-  @Input() title = "";
-  @Input() url = "";
-  @Input() thumbnailImageFileName = "";
+  @Input() title = '';
+  @Input() url = '';
+  @Input() thumbnailImageFileName = '';
+  @Input() color = '';
 
   @Output() visit = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 

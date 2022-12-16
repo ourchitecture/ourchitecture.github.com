@@ -13,6 +13,7 @@ import { IonicModule } from '@ionic/angular';
 export class UrlItemComponent implements OnInit {
   @Input() title = '';
   @Input() url = '';
+  @Input() color = '';
 
   @Output() visit = new EventEmitter<string>();
 

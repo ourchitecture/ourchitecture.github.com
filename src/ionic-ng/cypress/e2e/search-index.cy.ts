@@ -91,9 +91,10 @@ describe('Build Search Index', function () {
               ? metaDescription.getAttribute('content')
               : '';
             const metaKeywords = doc.querySelector('meta[name="keywords"]');
-            const keywords = metaKeywords
-              ? metaKeywords.getAttribute('content')?.split(',')
-              : '';
+            const metaKeywordsContent = metaKeywords
+              ? metaKeywords.getAttribute('content')
+              : 'ourchitecture,business,technology,alignment,digital transformation';
+            const keywords = metaKeywordsContent.split(',');
 
             cy.log('Page description', description);
             cy.log('Page keywords', keywords);
