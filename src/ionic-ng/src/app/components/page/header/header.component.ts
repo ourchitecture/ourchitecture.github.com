@@ -126,6 +126,11 @@ export class HeaderComponent implements OnInit {
   }
 
   private setLogo(isDarkMode: boolean) {
+    console.debug(
+      'Updating site logo',
+      this.themeService.getIsDarkModeEnabled()
+    );
+
     this.logo = isDarkMode
       ? 'assets/icons/favicon-dark.svg'
       : 'assets/icons/favicon-light.svg';

@@ -8,8 +8,8 @@ const STORAGE_KEYS_APP_DARK_MODE = 'app_dark-mode';
   providedIn: 'root',
 })
 export class ThemeService {
-  private wasDarkModeToggleEnabled = true;
-  private isDarkModeToggleEnabled = true;
+  private wasDarkModeToggleEnabled = false;
+  private isDarkModeToggleEnabled = false;
 
   constructor(
     private storage: Storage,

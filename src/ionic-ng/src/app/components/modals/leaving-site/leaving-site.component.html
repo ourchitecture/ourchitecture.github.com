@@ -1,18 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button (click)="cancel()">Cancel</ion-button>
+      <ion-button color="secondary" (click)="cancel()">Cancel</ion-button>
     </ion-buttons>
-    <ion-title>Leaving?</ion-title>
+    <ion-title color="primary">Leaving?</ion-title>
     <ion-buttons slot="primary">
-      <ion-button [href]="url" [strong]="true">Confirm</ion-button>
+      <ion-button color="primary" [href]="url" [strong]="true"
+        >Confirm</ion-button
+      >
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <p>
-    You are about to leave this website.
-    Please confirm. You will be directed to:
+  <p *ngIf="secondsLeft > 0">
+    You are about to leave this website. Please confirm. You will be
+    automatically redirected to the URL below in {{ secondsLeft }} seconds.
   </p>
-  <ion-note><a [href]="url">{{url}}</a></ion-note>
+  <p *ngIf="secondsLeft <= 0">
+    Automatically redirecting the browser to the URL below...
+  </p>
+  <p>Feel free to click on the link directly at any time.</p>
+  <ion-note
+    ><a [href]="url">{{ url }}</a></ion-note
+  >
 </ion-content>

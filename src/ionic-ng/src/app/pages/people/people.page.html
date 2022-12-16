@@ -3,39 +3,43 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title> Resources </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list lines="full">
-        <ion-item>
-          <ion-list lines="full">
-            <ion-item [routerLink]="['./personas']" detail>
-              <ion-label class="ion-text-wrap">
-                <h2>Personas</h2>
-                <p>The types of people in an organization.</p>
-              </ion-label>
-            </ion-item>
-            <app-book-item
-              (visit)="openLeavingSite($event)"
-              title='Peter Drucker: "The Drucker Library" Boxed Set'
-              thumbnailImageFileName="peter-drucker_the-drucker-library-boxed-set.jpg"
-              url="https://a.co/d/aMdwtNb"
-            >
-            </app-book-item>
-            <app-book-item
-              (visit)="openLeavingSite($event)"
-              title="Peopleware: Productive Projects and Teams"
-              thumbnailImageFileName="tom-demarco_peopleware-productive-projects-and-teams.jpg"
-              url="https://a.co/d/3klkunX"
-            >
-            </app-book-item>
-          </ion-list>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title color="primary" size="large">People</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Resources </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item [routerLink]="['./personas']" detail>
+            <ion-label class="ion-text-wrap">
+              <h2>Personas</h2>
+              <p>The types of people in an organization.</p>
+            </ion-label>
+          </ion-item>
+          <app-book-item
+            (visit)="openLeavingSite($event)"
+            title='Peter Drucker: "The Drucker Library" Boxed Set'
+            thumbnailImageFileName="peter-drucker_the-drucker-library-boxed-set.jpg"
+            url="https://a.co/d/aMdwtNb"
+          >
+          </app-book-item>
+          <app-book-item
+            (visit)="openLeavingSite($event)"
+            title="Peopleware: Productive Projects and Teams"
+            thumbnailImageFileName="tom-demarco_peopleware-productive-projects-and-teams.jpg"
+            url="https://a.co/d/3klkunX"
+          >
+          </app-book-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
 
 <app-footer></app-footer>

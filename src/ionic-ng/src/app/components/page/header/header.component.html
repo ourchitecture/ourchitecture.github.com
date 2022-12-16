@@ -2,9 +2,51 @@
   <ion-buttons slot="start">
     <ion-back-button></ion-back-button>
   </ion-buttons>
-  <ion-title><a href="/home"><ion-icon [src]="logo"></ion-icon></a> {{ title }}</ion-title>
+  <ion-title color="primary"
+    ><a href="/home"
+      ><svg
+        id="logo-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1287.5 1287.5"
+      >
+        <g>
+          <circle class="logo-bg" cx="643.75" cy="643.75" r="643.75" />
+          <g>
+            <rect
+              class="logo-compass"
+              x="615.31"
+              y="309.02"
+              width="163.82"
+              height="148.72"
+              rx="32.44"
+              ry="32.44"
+              transform="translate(136.82 948.22) rotate(-74.03)"
+            />
+            <polyline
+              class="logo-compass"
+              points="760.82 316.33 790.8 211.58 708.68 188.08 678.7 292.83"
+            />
+            <path
+              class="logo-compass"
+              d="M714.99,473.66c-254.37,243.81-410.39,536.05-410.39,536.05l11.06-147.58s72.03-148.89,318.72-411.54"
+            />
+            <path
+              class="logo-compass"
+              d="M653.54,536c62.05,316.09,45.53,586.59,45.53,586.59l68.68-131.09s17.63-164.45-52.78-517.85"
+            />
+            <path
+              class="logo-circle"
+              d="M803.76,641.15c50.08,21.67,79.68,47.11,76.94,71.18-5.48,48.13-138.25,72.55-296.56,54.54-158.31-18.01-282.2-71.63-276.73-119.76,3.29-28.9,52.46-49.25,125.5-57"
+            />
+          </g>
+        </g>
+      </svg>
+    </a>
+    {{ title }}</ion-title
+  >
   <ion-buttons slot="end">
     <ion-button
+      color="tertiary"
       (click)="toggleDarkMode()"
       title="Toggle display between light and dark mode"
     >
@@ -26,7 +68,12 @@
     (ionChange)="search($event)"
   ></ion-searchbar>
   <ion-buttons slot="end">
-    <ion-button [disabled]="searchQuery.length === 0" (click)="submitSearch()">Search</ion-button>
+    <ion-button
+      color="secondary"
+      [disabled]="searchQuery.length === 0"
+      (click)="submitSearch()"
+      >Search</ion-button
+    >
   </ion-buttons>
 </ion-toolbar>
 <ion-modal
@@ -36,9 +83,11 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Search Results</ion-title>
+        <ion-title color="primary">Search Results</ion-title>
         <ion-buttons slot="primary">
-          <ion-button (click)="dismissSearchResults()">Close</ion-button>
+          <ion-button color="secondary" (click)="dismissSearchResults()"
+            >Close</ion-button
+          >
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
@@ -71,8 +120,8 @@
       </ion-list>
       <ion-list>
         <ion-item *ngIf="!isSearchResultsLoading && searchResults.length === 0">
-          <ion-label class="ion-text-wrap" color="warning"
-            >No search results found</ion-label
+          <ion-label class="ion-text-wrap" color="medium"
+            ><em>No search results found.</em></ion-label
           >
         </ion-item>
         <ion-item

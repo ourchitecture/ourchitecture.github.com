@@ -1,0 +1,25 @@
+ion-toolbar {
+  svg#logo-icon {
+    min-width: var(--logo-icon-size);
+    min-height: var(--logo-icon-size);
+    width: var(--logo-icon-size);
+    height: var(--logo-icon-size);
+    max-width: var(--logo-icon-size);
+    max-height: var(--logo-icon-size);
+
+    .logo-bg {
+      fill: var(--logo-icon-background-color);
+    }
+
+    .logo-compass {
+      fill: var(--logo-icon-foreground-color);
+    }
+
+    .logo-circle {
+      stroke: var(--logo-icon-foreground-color);
+      fill: none;
+      stroke-miterlimit: 10;
+      stroke-width: 28px;
+    }
+  }
+}
