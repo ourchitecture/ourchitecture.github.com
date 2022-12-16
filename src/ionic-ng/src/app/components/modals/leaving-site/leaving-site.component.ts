@@ -1,5 +1,5 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, Input, OnInit, Inject } from '@angular/core';
+import { Component, Input, OnInit, Inject, OnDestroy } from '@angular/core';
 
 import { IonicModule, ModalController } from '@ionic/angular';
 
@@ -12,7 +12,7 @@ const INITIAL_SECONDS_LEFT = 10;
   styleUrls: ['./leaving-site.component.scss'],
   imports: [CommonModule, IonicModule],
 })
-export class LeavingSiteComponent implements OnInit {
+export class LeavingSiteComponent implements OnInit, OnDestroy {
   @Input() url: string;
 
   @Input() modalController: ModalController;
@@ -38,12 +38,16 @@ export class LeavingSiteComponent implements OnInit {
     }, 1000);
   }
 
+  ngOnDestroy() {
+    this.resetCountdown();
+  }
+
   cancel() {
     this.resetCountdown();
     this.modalController.dismiss();
   }
 
-  private resetCountdown() {
+  resetCountdown() {
     try {
       clearInterval(this.redirectTimer);
     } catch (e) {}

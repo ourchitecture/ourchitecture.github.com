@@ -34,8 +34,6 @@ export class HeaderComponent implements OnInit {
   async ngOnInit() {
     try {
       await this.themeService.initialize();
-
-      this.setLogo(this.themeService.getIsDarkModeEnabled());
     } catch (error) {
       // TODO: log errors
       console.error('Unexpected error initializing the ThemeService', error);
@@ -54,8 +52,6 @@ export class HeaderComponent implements OnInit {
 
   public async toggleDarkMode() {
     this.themeService.toggleDarkMode();
-
-    this.setLogo(this.themeService.getIsDarkModeEnabled());
   }
 
   public searchKeyUp(event: any) {
@@ -123,16 +119,5 @@ export class HeaderComponent implements OnInit {
 
   public getSearchResultTracker(index: number, searchResult: any) {
     return searchResult.id;
-  }
-
-  private setLogo(isDarkMode: boolean) {
-    console.debug(
-      'Updating site logo',
-      this.themeService.getIsDarkModeEnabled()
-    );
-
-    this.logo = isDarkMode
-      ? 'assets/icons/favicon-dark.svg'
-      : 'assets/icons/favicon-light.svg';
   }
 }
