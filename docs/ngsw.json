@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1671232651625,
+  "timestamp": 1671233051484,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -21,7 +21,7 @@
         "/168.65df6175f03a4d96.js",
         "/1709.7ccd247ac331d11a.js",
         "/2073.4fa789f402ea7523.js",
-        "/2080.ff4b7a9eec3a0e90.js",
+        "/2080.5c9faadfda782130.js",
         "/2175.710fe6db90872283.js",
         "/2289.ca5383a046e56098.js",
         "/2349.aced8e9df82cb149.js",
@@ -85,8 +85,8 @@
         "/polyfills-core-js.c8961a92c3ed4c69.js",
         "/polyfills-dom.5c5f23fb57b03028.js",
         "/polyfills.9bc834106dfa609b.js",
-        "/runtime.7b5e5a917b854f1e.js",
-        "/styles.302074d183df11ed.css"
+        "/runtime.fe5517de4e29536a.js",
+        "/styles.e28f78af640c841f.css"
       ],
       "patterns": []
     },
@@ -179,7 +179,7 @@
     "/168.65df6175f03a4d96.js": "69d1e2fd3cc2bb7f3e64819825d66bea355202dc",
     "/1709.7ccd247ac331d11a.js": "bab577501da081af8849d9504a93ce6fbbebd8f7",
     "/2073.4fa789f402ea7523.js": "60bed503273040229ef05e3de5776fbc626891f9",
-    "/2080.ff4b7a9eec3a0e90.js": "b0147b7f7541e3fce557355b9a7d29a94016bc00",
+    "/2080.5c9faadfda782130.js": "bef8ffc6b66636cdcf55c863c8cef3792f51f530",
     "/2175.710fe6db90872283.js": "c1ff14e32b1900abc5c48018a75b1e7a6c173e59",
     "/2289.ca5383a046e56098.js": "bd65975f74d9ecd8dce75aba0bff3bfb77180d36",
     "/2349.aced8e9df82cb149.js": "10f6fa5f27911265dac235f124c9c1f3a754f56d",
@@ -235,7 +235,7 @@
     "/9841.3e4330fd34a7eed0.js": "105f89326080365e80aba3a2ee02451e8b9d8387",
     "/9922.b1dd3528350aaf4e.js": "a46529366ac4772e4edd9b2b6bd8816f3143da7e",
     "/9958.a14af56d87eaae80.js": "740195c87c4711fd2a64e683f05f97509ddbe9b5",
-    "/api/data/search-index.json": "8929aababd6b4e1d0b4ab7c2b62f7684cbe598ae",
+    "/api/data/search-index.json": "f8fdd3759fc835dac398ca5ee7fb6ad07c8fc079",
     "/assets/icons/favicon-dark-128.png": "5920e8e7e0140196069a0eb249865608a912eb5e",
     "/assets/icons/favicon-dark-144.png": "6af92e06800ad32504c09dac6372693cdeae119d",
     "/assets/icons/favicon-dark-152.png": "1d4e4092fa0204a79390402a6799470edbd6f6e7",
@@ -291,14 +291,14 @@
     "/assets/thumbnails/videos/youtube.com/the-open-group_togaf-business-architecture_business-capability-guide.jpg": "e1e0d76d36ea4719a01f80c5c9f79f1104c301df",
     "/common.f71de8dbbbb2d938.js": "37f556318b759599459b83c659f453e68e0818e7",
     "/favicon.ico": "54c566f0404b5d220f68ec97ed64f3a61730b287",
-    "/index.html": "f526e8784a45ab02717ec7c90691c4a8317a11e7",
+    "/index.html": "b26d1d1658ec6f46107b69cd31e8a075b46b4508",
     "/main.016a78d84fb28cb4.js": "c34c6c7b2f9583701a0d640677214b946a4543f3",
     "/manifest.webmanifest": "93b3d0fe655bdffed113f231418c769af5d55172",
     "/polyfills-core-js.c8961a92c3ed4c69.js": "e44d42a08762418090a95d81b35288ab338d21e8",
     "/polyfills-dom.5c5f23fb57b03028.js": "06f5dc30f55bf9a3d9c6f9bca07c0041a6bbdaa0",
     "/polyfills.9bc834106dfa609b.js": "2af84eddd26b2166b2feae5fe76720edde371c19",
-    "/runtime.7b5e5a917b854f1e.js": "f751dfea1a9289ede00b6d7b568a8630378784f1",
-    "/styles.302074d183df11ed.css": "275fd94c7d548ac9053c94c5e0a30b0ae064e091"
+    "/runtime.fe5517de4e29536a.js": "3b19716f7222180c83d4df27cbd2f4a7e7b2d190",
+    "/styles.e28f78af640c841f.css": "b2bb4d6366509de9fe6e1f449c841a101c1f0a43"
   },
   "navigationUrls": [
     {
