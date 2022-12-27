@@ -23,7 +23,10 @@ env:
   OUR_CREATE_PR: "ourchitecture/create-pull-request/patch"
 
 # Trigger the workflow on push or pull request.
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
   integration:

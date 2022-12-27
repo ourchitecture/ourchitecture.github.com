@@ -1,16 +1,24 @@
 {
   "folders": [
-    {
-      "name": ".github",
-      "path": "../../.github"
-    },
+    // Ionic project must be the first in the list for the Ionic plug-in to work.
     {
       "name": "ourchitecture.io",
       "path": "."
+    },
+    {
+      "name": ".github",
+      "path": "../../.github"
     }
   ],
   "settings": {
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "search.exclude": {
+      "docs/": true,
+      "node_modules/": true
+    },
+    // Ensure that terminals default to the project.
+    "terminal.integrated.cwd": "./"
   },
   "extensions": {
     "recommendations": [
