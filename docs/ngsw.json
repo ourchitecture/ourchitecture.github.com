@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672177584892,
+  "timestamp": 1699000486917,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -235,7 +235,7 @@
     "/9841.3e4330fd34a7eed0.js": "105f89326080365e80aba3a2ee02451e8b9d8387",
     "/9922.b1dd3528350aaf4e.js": "a46529366ac4772e4edd9b2b6bd8816f3143da7e",
     "/9958.a14af56d87eaae80.js": "740195c87c4711fd2a64e683f05f97509ddbe9b5",
-    "/api/data/search-index.json": "7527a572e885d2c41fb92e573e0be36ddfe3749c",
+    "/api/data/search-index.json": "b159d3e798835c40fbdbbb4706845b999debaebc",
     "/assets/icons/favicon-dark-128.png": "5920e8e7e0140196069a0eb249865608a912eb5e",
     "/assets/icons/favicon-dark-144.png": "6af92e06800ad32504c09dac6372693cdeae119d",
     "/assets/icons/favicon-dark-152.png": "1d4e4092fa0204a79390402a6799470edbd6f6e7",
@@ -291,7 +291,7 @@
     "/assets/thumbnails/videos/youtube.com/the-open-group_togaf-business-architecture_business-capability-guide.jpg": "e1e0d76d36ea4719a01f80c5c9f79f1104c301df",
     "/common.f71de8dbbbb2d938.js": "37f556318b759599459b83c659f453e68e0818e7",
     "/favicon.ico": "54c566f0404b5d220f68ec97ed64f3a61730b287",
-    "/index.html": "726894a3490ef4d9e4637600755095666ddb8e1c",
+    "/index.html": "74cec5906896bc284c92616539f510256bbaccbb",
     "/main.74f4209982d50775.js": "dc155f2e8d7a03e54a443d9d1397c094b5d80542",
     "/manifest.webmanifest": "93b3d0fe655bdffed113f231418c769af5d55172",
     "/polyfills-core-js.c8961a92c3ed4c69.js": "e44d42a08762418090a95d81b35288ab338d21e8",
